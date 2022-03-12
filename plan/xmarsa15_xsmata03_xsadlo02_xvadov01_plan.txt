@@ -1,9 +1,8 @@
-testy + setup repozitara - 20.3.
-kniznica - 3.4.
-profiling - 10.4.
-gui - 17.4.
-dokumentacia + instalacia - 28.4.
+2.Projekt IVS
 
+TÍM:
+	SIGSEGV
+PLÁN:
 1. ETAPA (testy + setup repozitara - 20.3.)
 	xmarsa15 - setup repozitara
 	xsadlo02 - testy zakladnych funkcii
@@ -28,8 +27,13 @@ dokumentacia + instalacia - 28.4.
 	xsmata03 - dokumentácia
 	xvadov01 - dokumentácia
 
-komunikácia:
-    discord + whatsapp, pravidelné stretnutia
+KOMUNIKÁCIA:
+	DISCORD:
+    		Primárny komunikačný kanál. Server má jednoduchú štruktúru podľa fáz vývoja. Miesto konania pravidelných stretnutí v dopredu dohodnutých termínoch. Schôdzky prebiehajú pravidlene aspoň raz za týždeň.
+	WHATSAPP:
+    		V prípade potreby komunikácia cez WhatsApp.
 
-správa:
-    github - https://github.com/xmarshka/ivs_project_2_SIGSEGV
+SYSTÉM PRE SPRÁVU VERZIÍ:
+	GitHub:
+		https://github.com/xmarshka/ivs_project_2_SIGSEGV
+		Repozitár je zdieľaný s vyučujúcimi.
