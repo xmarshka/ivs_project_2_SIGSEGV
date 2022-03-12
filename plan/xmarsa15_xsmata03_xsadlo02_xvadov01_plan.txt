@@ -1,8 +1,7 @@
 2.Projekt IVS
-
-TÍM:
-	SIGSEGV
-    
+--------------------------------------------------------------------------
+TÍM:	SIGSEGV
+--------------------------------------------------------------------------
 PLÁN:
 1. ETAPA (testy + setup repozitára - 20.3.)
 	xmarsa15 - setup repozitára
@@ -27,13 +26,13 @@ PLÁN:
 	xsadlo02 - prezentácia
 	xsmata03 - dokumentácia
 	xvadov01 - dokumentácia
-
+--------------------------------------------------------------------------
 KOMUNIKÁCIA:
-	DISCORD:
+	Discord:
     		Primárny komunikačný kanál. Server má jednoduchú štruktúru podľa fáz vývoja. Miesto konania pravidelných stretnutí v dopredu dohodnutých termínoch. Schôdzky prebiehajú pravidlene aspoň raz za týždeň.
-	WHATSAPP:
+	WhatsApp:
     		V prípade potreby komunikácia cez WhatsApp.
-
+--------------------------------------------------------------------------
 SYSTÉM PRE SPRÁVU VERZIÍ:
 	GitHub:
 		https://github.com/xmarshka/ivs_project_2_SIGSEGV
