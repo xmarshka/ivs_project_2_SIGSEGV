@@ -1,5 +1,6 @@
 testy + setup repozitara - 20.3.
 kniznica - 3.4.
+profiling - 10.4.
 gui - 17.4.
 dokumentacia + instalacia - 28.4.
 
@@ -22,10 +23,13 @@ dokumentacia + instalacia - 28.4.
 	xvadov01 - esteticke spracovanie + layout
 
 4. ETAPA (dokumentacia + instalacia - 28.4.)
-	xmarsa15 - TODO
-	xsadlo02 - TODO
-	xsmata03 - TODO
-	xvadov01 - TODO
+	xmarsa15 - installer, Makefile
+	xsadlo02 - prezentácia
+	xsmata03 - dokumentácia
+	xvadov01 - dokumentácia
 
-komunikácia: discord + whatsapp, pravidelné stretnutia
-správa: github - https://github.com/xmarshka/ivs_project_2_SIGSEGV
+komunikácia:
+    discord + whatsapp, pravidelné stretnutia
+
+správa:
+    github - https://github.com/xmarshka/ivs_project_2_SIGSEGV
