@@ -2,26 +2,27 @@
 
 TÍM:
 	SIGSEGV
+    
 PLÁN:
-1. ETAPA (testy + setup repozitara - 20.3.)
-	xmarsa15 - setup repozitara
-	xsadlo02 - testy zakladnych funkcii
-	xsmata03 - testy pokrocilych funkcii
+1. ETAPA (testy + setup repozitára - 20.3.)
+	xmarsa15 - setup repozitára
+	xsadlo02 - testy základných funkcií
+	xsmata03 - testy pokročilých funkcií
 	xvadov01 - testy I/O
 
-2. ETAPA (kniznica - 3.4.)
-	xmarsa15 - spisanie doxygen komentarov, priprava dokumentacie
-	xsadlo02 - implementacia I/O
-	xsmata03 - implementacia zakladnych funkcii
-	xvadov01 - implementacia pokrocilych funkcii
+2. ETAPA (knižnica - 3.4.)
+	xmarsa15 - spísanie doxygen komentárov, príprava dokumentácie
+	xsadlo02 - implementácia I/O
+	xsmata03 - implementácia základných funkcií
+	xvadov01 - implementácia pokročilých funkcií
 
 3. ETAPA (gui - 17.4.)
 	xmarsa15 - keyboard input
-	xsadlo02 - realizacia mockupu
-	xsmata03 - prepojenie kniznice a gui
-	xvadov01 - esteticke spracovanie + layout
+	xsadlo02 - realizácia mockupu
+	xsmata03 - prepojenie knižnice a gui
+	xvadov01 - estetické spracovanie + layout
 
-4. ETAPA (dokumentacia + instalacia - 28.4.)
+4. ETAPA (dokumentácia + inštalácia - 28.4.)
 	xmarsa15 - installer, Makefile
 	xsadlo02 - prezentácia
 	xsmata03 - dokumentácia
