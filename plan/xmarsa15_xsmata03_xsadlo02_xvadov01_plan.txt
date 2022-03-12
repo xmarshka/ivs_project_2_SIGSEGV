@@ -1,0 +1,31 @@
+testy + setup repozitara - 20.3.
+kniznica - 3.4.
+gui - 17.4.
+dokumentacia + instalacia - 28.4.
+
+1. ETAPA (testy + setup repozitara - 20.3.)
+	xmarsa15 - setup repozitara
+	xsadlo02 - testy zakladnych funkcii
+	xsmata03 - testy pokrocilych funkcii
+	xvadov01 - testy I/O
+
+2. ETAPA (kniznica - 3.4.)
+	xmarsa15 - spisanie doxygen komentarov, priprava dokumentacie
+	xsadlo02 - implementacia I/O
+	xsmata03 - implementacia zakladnych funkcii
+	xvadov01 - implementacia pokrocilych funkcii
+
+3. ETAPA (gui - 17.4.)
+	xmarsa15 - keyboard input
+	xsadlo02 - realizacia mockupu
+	xsmata03 - prepojenie kniznice a gui
+	xvadov01 - esteticke spracovanie + layout
+
+4. ETAPA (dokumentacia + instalacia - 28.4.)
+	xmarsa15 - TODO
+	xsadlo02 - TODO
+	xsmata03 - TODO
+	xvadov01 - TODO
+
+komunikácia: discord + whatsapp, pravidelné stretnutia
+správa: github - https://github.com/xmarshka/ivs_project_2_SIGSEGV
