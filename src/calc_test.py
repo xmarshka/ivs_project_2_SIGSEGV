@@ -92,5 +92,54 @@ class DivideTest(unittest.TestCase):
 
     def test_div_combined(self):
         self.assertAlmostEqual(divide(940, 3.333), 100.717882781, 9)
-        self.assertAlmostEqual(divide(-1920002.15, 69), -27.826.118115, 6)
+        self.assertAlmostEqual(divide(-1920002.15, 69), -27826.118115, 6)
         self.assertAlmostEqual(divide(-385.1, -1), 385.1, 1)
+        
+class ToThePowerOfTest(unittest.TestCase):
+
+    def test_to_the_power_of_zero(self):
+        self.assertEqual(test_to_the_power_of(0, 0), 1)
+        self.assertEqual(test_to_the_power_of(131, 0), 1)
+        self.assertEqual(test_to_the_power_of(-131, 0), 1)
+        self.assertEqual(test_to_the_power_of(-23.29, 0), 1)
+        self.assertEqual(test_to_the_power_of(23.29, 0), 1)
+        
+    def test_to_the_power_of_even(self):
+        self.assertEqual(test_to_the_power_of(17, 2), 289)
+        self.assertEqual(test_to_the_power_of(-7, 4), 2401)
+        self.assertEqual(test_to_the_power_of(23.29, 4), 294223.90426)
+        self.assertEqual(test_to_the_power_of(-23.29, 2), 0.00184358)
+        
+    def test_to_the_power_of_odd(self):
+        self.assertEqual(test_to_the_power_of(17, 3), 4913)
+        self.assertEqual(test_to_the_power_of(-7, 1), -7)
+        self.assertAlmostEqual(test_to_the_power_of(23.29, 5), 6852474.73023, 5)
+        self.assertAlmostEqual(test_to_the_power_of(-23.29, 3), -12633.057289, 6)
+        
+    def test_to_the_power_of_two(self):
+        self.assertEqual(test_to_the_power_of(131, 2), 145)
+        self.assertEqual(test_to_the_power_of(997, 2), 994009)
+        self.assertEqual(test_to_the_power_of(-191, 2), 36481)
+        self.assertEqual(test_to_the_power_of(-313, 2), 97969)
+
+    def test_failure_to_the_power_of(self):
+        self.assertRaises(ValueError, test_to_the_power_of(-313, -2))
+        self.assertEqual(ValueError, test_to_the_power_of(191, 7.3))
+        self.assertEqual(ValueError, test_to_the_power_of(313, -3.17))
+        self.assertEqual(ValueError, test_to_the_power_of(17, -5))
+        
+class RootTest(unittest.TestCase):
+    
+    def test_to_the_power_of_zero(self):
+        self.assertEqual(test_to_the_power_of(0, 0), 1)
+        self.assertEqual(test_to_the_power_of(131, 0), 1)
+        self.assertEqual(test_to_the_power_of(-131, 0), 1)
+        self.assertEqual(test_to_the_power_of(-23.29, 0), 1)
+        self.assertEqual(test_to_the_power_of(23.29, 0), 1)
+        
+    def test_failure_to_the_power_of(self):
+        self.assertRaises(ValueError, test_to_the_power_of(-313, ))
+        self.assertRaises(ValueError, test_to_the_power_of(-313, 4))
+        self.assertEqual(ValueError, test_to_the_power_of(191, 7.3))
+        self.assertEqual(ValueError, test_to_the_power_of(313, -3.17))
+        self.assertEqual(ValueError, test_to_the_power_of(17, -5))
