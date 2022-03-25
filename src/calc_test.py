@@ -135,13 +135,13 @@ class ToThePowerOfTest(unittest.TestCase):
 
     def test_failure_to_the_power_of(self):
         self.assertRaises(ValueError, test_to_the_power_of(-313, -2))               # exponent must be a Natural number (negative even number)
-        self.assertEqual(ValueError, test_to_the_power_of(191, 7.3))                # exponent must be a Natural number (floating point number)
-        self.assertEqual(ValueError, test_to_the_power_of(313, -3.17))              # exponent must be a Natural number (negative floating point number)
-        self.assertEqual(ValueError, test_to_the_power_of(17, -5))                  # exponent must be a Natural number (negative odd number)
-        self.assertEqual(ValueError, test_to_the_power_of(17,))                     # missing exponent
-        self.assertEqual(ValueError, test_to_the_power_of(,3))                      # missing base
+        self.assertRaises(ValueError, test_to_the_power_of(191, 7.3))                # exponent must be a Natural number (floating point number)
+        self.assertRaises(ValueError, test_to_the_power_of(313, -3.17))              # exponent must be a Natural number (negative floating point number)
+        self.assertRaises(ValueError, test_to_the_power_of(17, -5))                  # exponent must be a Natural number (negative odd number)
+        self.assertRaises(ValueError, test_to_the_power_of(17, ))                     # missing exponent
+        self.assertRaises(ValueError, test_to_the_power_of( ,3))                      # missing base
         
-class RootTest(unittest.TestCase): # radicand and then index square root of 4... root(4, 2) or root(4, )
+class RootTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
     
     def root_of_zero(self):
         self.assertEqual(root(0, ), 0)
