@@ -92,5 +92,97 @@ class DivideTest(unittest.TestCase):
 
     def test_div_combined(self):
         self.assertAlmostEqual(divide(940, 3.333), 100.717882781, 9)
-        self.assertAlmostEqual(divide(-1920002.15, 69), -27.826.118115, 6)
+        self.assertAlmostEqual(divide(-1920002.15, 69), -27826.118115, 6)
         self.assertAlmostEqual(divide(-385.1, -1), 385.1, 1)
+class FactorialTest(unittest.TestCase):
+
+    def test_factorial(self):
+        self.assertEqual(factorial(0), 1)
+        self.assertEqual(factorial(10), 3628800)
+        self.assertEqual(factorial(12), 479001600)
+        self.assertEqual(factorial(18), 6402373705728000000)
+
+    def test_faulire_factorial(self):
+        self.assertRaises(ValueError, factorial(-313))                          # negative number given
+        self.assertRaises(ValueError, factorial())                              # no number given
+
+class ToThePowerOfTest(unittest.TestCase):
+
+    def test_to_the_power_of_zero(self):
+        self.assertEqual(to_the_power_of(0, 0), 1)
+        self.assertEqual(to_the_power_of(131, 0), 1)
+        self.assertEqual(to_the_power_of(-131, 0), 1)
+        self.assertEqual(to_the_power_of(-23.29, 0), 1)
+        self.assertEqual(to_the_power_of(23.29, 0), 1)
+        
+    def test_to_the_power_of_even(self):
+        self.assertEqual(to_the_power_of(17, 2), 289)
+        self.assertEqual(to_the_power_of(-7, 4), 2401)
+        self.assertEqual(to_the_power_of(23.29, 4), 294223.90426)
+        self.assertEqual(to_the_power_of(-23.29, 2), 0.00184358)
+        
+    def test_to_the_power_of_odd(self):
+        self.assertEqual(to_the_power_of(17, 3), 4913)
+        self.assertEqual(to_the_power_of(-7, 1), -7)
+        self.assertAlmostEqual(to_the_power_of(23.29, 5), 6852474.73023, 5)
+        self.assertAlmostEqual(to_the_power_of(-23.29, 3), -12633.057289, 6)
+        
+    def test_to_the_power_of_two(self):
+        self.assertEqual(to_the_power_of(131, 2), 145)
+        self.assertEqual(to_the_power_of(997, 2), 994009)
+        self.assertEqual(to_the_power_of(-191, 2), 36481)
+        self.assertEqual(to_the_power_of(-313, 2), 97969)
+
+    def test_failure_to_the_power_of(self):
+        self.assertRaises(ValueError, to_the_power_of(-313, -2))                   # exponent must be a Natural number (negative even number)
+        self.assertRaises(ValueError, to_the_power_of(191, 7.3))                   # exponent must be a Natural number (floating point number)
+        self.assertRaises(ValueError, to_the_power_of(313, -3.17))                 # exponent must be a Natural number (negative floating point number)
+        self.assertRaises(ValueError, to_the_power_of(17, -5))                     # exponent must be a Natural number (negative odd number)
+        self.assertRaises(ValueError, to_the_power_of(17, ))                       # missing exponent
+        
+class RootTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
+    
+    def test_root_of_zero(self):
+        self.assertEqual(root(0, ), 0)
+        self.assertEqual(root(0, 2), 0)
+        self.assertEqual(root(0, 5), 0)
+        
+    def tets_square_root_of(self):
+        self.assertEqual(root(64, ), 8)
+        self.assertAlmostEqual(root(100.5, ), 10.02497, 5)
+        self.assertEqual(root(16, 2), 4)
+
+    def test_even_root_of(self):
+        self.assertAlmostEqual(root(64, 4), 2.82843, 5)
+        self.assertEqual(root(15625, 6), 5)
+        self.assertEqual(root(10000000000, 10), 10)
+
+    def test_odd_root_of(self):
+        self.assertEqual(root(-27, 3), -3)
+        self.assertEqual(root(27, 3), 3)
+        self.assertEqual(root(100000, 5), 10)
+        self.assertEqaul(root(-100000, 5), -10)
+        self.assertAlmostEqual(root(-1000.5, 3), -10.00167, 5)
+        self.assertAlmostEqual(root(100000.5, 5), -10.00001, 5)
+
+    def test_failure_root_of(self):
+        self.assertRaises(ValueError, root(-313, ))                 # radicand of a square root must not be negative
+        self.assertRaises(ValueError, root(-313, 4))                # radicand of an even root must not be negative
+        self.assertEqual(ValueError, root(191, 7.3))                # root index must be a Natural number
+        self.assertEqual(ValueError, root(313, -3.17))              # root index must be a Natural number
+        self.assertEqual(ValueError, root(17, -5))                  # root index must be a Natural number
+
+class PrimeNumberTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
+    
+    def test_prime(self):
+        self.assertTrue(prime(191))
+        self.assertTrue(prime(6280071493))
+        self.assertTrue(prime(75437))
+        self.assertFalse(prime(1))
+        self.assertFalse(prime(0))
+        self.assertFalse(prime(245655))
+    
+    def test_failure_prime(self):
+        self.assertRaises(ValueError, prime(-84184))                 # operand must not negative
+        self.assertRaises(ValueError, prime(-123.1))                 # operand must be a Natural number
+        self.assertRaises(ValueError, prime(123.15))                 # operand must be a Natural number
