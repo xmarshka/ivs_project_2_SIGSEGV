@@ -174,7 +174,7 @@ class RootTest(unittest.TestCase): # radicand and then index: square root of 4..
 
 class PrimeNumberTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
     
-    def tets_prime(self):
+    def test_prime(self):
         self.assertTrue(prime(191))
         self.assertTrue(prime(6280071493))
         self.assertTrue(prime(75437))
@@ -182,7 +182,7 @@ class PrimeNumberTest(unittest.TestCase): # radicand and then index: square root
         self.assertFalse(prime(0))
         self.assertFalse(prime(245655))
     
-    def tets_failure_prime(self):
+    def test_failure_prime(self):
         self.assertRaises(ValueError, prime(-84184))                 # operand must not negative
         self.assertRaises(ValueError, prime(-123.1))                 # operand must be a Natural number
         self.assertRaises(ValueError, prime(123.15))                 # operand must be a Natural number
