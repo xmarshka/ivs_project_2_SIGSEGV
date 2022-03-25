@@ -142,22 +142,22 @@ class ToThePowerOfTest(unittest.TestCase):
         
 class RootTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
     
-    def root_of_zero(self):
+    def test_root_of_zero(self):
         self.assertEqual(root(0, ), 0)
         self.assertEqual(root(0, 2), 0)
         self.assertEqual(root(0, 5), 0)
         
-    def square_root_of(self):
+    def tets_square_root_of(self):
         self.assertEqual(root(64, ), 8)
         self.assertAlmostEqual(root(100.5, ), 10.02497, 5)
         self.assertEqual(root(16, 2), 4)
 
-    def even_root_of(self):
+    def test_even_root_of(self):
         self.assertAlmostEqual(root(64, 4), 2.82843, 5)
         self.assertEqual(root(15625, 6), 5)
         self.assertEqual(root(10000000000, 10), 10)
 
-    def odd_root_of(self):
+    def test_odd_root_of(self):
         self.assertEqual(root(-27, 3), -3)
         self.assertEqual(root(27, 3), 3)
         self.assertEqual(root(100000, 5), 10)
@@ -171,3 +171,18 @@ class RootTest(unittest.TestCase): # radicand and then index: square root of 4..
         self.assertEqual(ValueError, root(191, 7.3))                # root index must be a Natural number
         self.assertEqual(ValueError, root(313, -3.17))              # root index must be a Natural number
         self.assertEqual(ValueError, root(17, -5))                  # root index must be a Natural number
+
+class PrimeNumberTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
+    
+    def tets_prime(self):
+        self.assertTrue(prime(191))
+        self.assertTrue(prime(6280071493))
+        self.assertTrue(prime(75437))
+        self.assertFalse(prime(1))
+        self.assertFalse(prime(0))
+        self.assertFalse(prime(245655))
+    
+    def tets_failure_prime(self):
+        self.assertRaises(ValueError, prime(-84184))                 # operand must not negative
+        self.assertRaises(ValueError, prime(-123.1))                 # operand must be a Natural number
+        self.assertRaises(ValueError, prime(123.15))                 # operand must be a Natural number
