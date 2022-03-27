@@ -2,7 +2,7 @@
 # @file calc_test.py
 # @brief Tests of mathlib
 
-# run with: python3 -m unittest calc
+# run with: python3 -m unittest calc_test
 
 import unittest
 from calc import *
@@ -23,6 +23,7 @@ class AddTest(unittest.TestCase):
         self.assertAlmostEqual(add(2.2291, 9.882), 12.1111, 4)
         self.assertAlmostEqual(add(-88183.293, -19383.28), -107566.573, 3)
         self.assertAlmostEqual(add(-29.11, 29994.238), 29965.128, 3)
+        self.assertAlmostEqual(add(281.20398173, 0.184875102391), 281.388856832391, 10)
 
     def test_add_combined(self):
         self.assertEqual(add(-2844.1, 9288), 6443.9)
@@ -42,15 +43,15 @@ class SubtractTest(unittest.TestCase):
     def test_sub_floating(self):
         self.assertAlmostEqual(subtract(2.1231, 21.312), -19.1889, 4)
         self.assertAlmostEqual(subtract(-12.138, -1283.2), 1271.062, 3)
-        self.assertAlmostEqual(subtract(-2912.39, 2919992.2), -29202904.59, 2) 
+        self.assertAlmostEqual(subtract(-2912.39, 2919992.2), -2922904.59, 2) 
 
     def test_sub_combined(self):
         self.assertEqual(subtract(21, -1.19), 22.19)
-        self.assertEqual(subtract(-3, -1.2), 1.8)
+        self.assertEqual(subtract(-3, -1.2), -1.8)
 
 class MultiplyTest(unittest.TestCase):
 
-    def test_zero(self):
+    def test_mul_zero(self):
         self.assertEqual(multiply(2199, 0), 0)
         self.assertEqual(multiply(0, 0), 0)
 
@@ -65,7 +66,7 @@ class MultiplyTest(unittest.TestCase):
 
     def test_mul_floating(self):
         self.assertAlmostEqual(multiply(1.293, 4.7), 6.0771, 4)
-        self.assertAlmostEqual(multiply(-183.18, 487.648), -91159.16064, 5)
+        self.assertAlmostEqual(multiply(-183.18, 487.648), -89327.36064, 5)
 
     def test_mul_combined(self):
         self.assertAlmostEqual(multiply(255, -16.7), -4258.5, 1)
@@ -73,14 +74,14 @@ class MultiplyTest(unittest.TestCase):
 
 class DivideTest(unittest.TestCase):
 
-    def test_zero(self):
+    def test_div_zero(self):
         self.assertEqual(divide(0, 182), 0)
-        self.assertRaises(ValueError, divide(283, 0))
-        self.assertRaises(ValueError, divide(-284.1, 0))
+        self.assertRaises(ValueError, divide, 283, 0)
+        self.assertRaises(ValueError, divide,-284.1, 0)
 
     def test_div_positive(self):
-        self.assertEqual(divide(290, 2), 145)
-        self.assertEqual(divide(64905, 5), 12891)
+        self.assertEqual(divide(290, 2), 145.0)
+        self.assertEqual(divide(64905, 5), 12981.0)
 
     def test_div_negative(self):
         self.assertEqual(divide(-291, 2), -145.5)
@@ -88,12 +89,13 @@ class DivideTest(unittest.TestCase):
 
     def test_div_floating(self):
         self.assertAlmostEqual(divide(2.46, 1.2), 2.05, 2)
-        self.assertAlmostEqual(divide(91664, -918725), 0.0997730550, 10)
+        self.assertAlmostEqual(divide(91664, -918725), -0.0997730550, 10)
 
     def test_div_combined(self):
-        self.assertAlmostEqual(divide(940, 3.333), 100.717882781, 9)
-        self.assertAlmostEqual(divide(-1920002.15, 69), -27826.118115, 6)
+        self.assertAlmostEqual(divide(940, 3.333), 282.028202820, 9)
+        self.assertAlmostEqual(divide(-1920002.15, 69), -27826.1181159420, 10)
         self.assertAlmostEqual(divide(-385.1, -1), 385.1, 1)
+
 class FactorialTest(unittest.TestCase):
 
     def test_factorial(self):
