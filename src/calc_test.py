@@ -20,10 +20,10 @@ class AddTest(unittest.TestCase):
         self.assertEqual(add(-2147483648, -2147483648), -4294967296)
         
     def test_add_floating(self):
-        self.assertAlmostEqual(add(2.2291, 9.882), 12.1111, 4)
-        self.assertAlmostEqual(add(-88183.293, -19383.28), -107566.573, 3)
-        self.assertAlmostEqual(add(-29.11, 29994.238), 29965.128, 3)
-        self.assertAlmostEqual(add(281.20398173, 0.184875102391), 281.388856832391, 10)
+        self.assertAlmostEqual(add(2.2291, 9.882), 12.1111, 8)
+        self.assertAlmostEqual(add(-88183.293, -19383.28), -107566.573, 8)
+        self.assertAlmostEqual(add(-29.11, 29994.238), 29965.128, 8)
+        self.assertAlmostEqual(add(281.20398173, 0.184875102391), 281.388856832391, 8)
 
     def test_add_combined(self):
         self.assertEqual(add(-2844.1, 9288), 6443.9)
@@ -41,9 +41,9 @@ class SubtractTest(unittest.TestCase):
         self.assertEqual(subtract(-199234, 0), -199234)
 
     def test_sub_floating(self):
-        self.assertAlmostEqual(subtract(2.1231, 21.312), -19.1889, 4)
-        self.assertAlmostEqual(subtract(-12.138, -1283.2), 1271.062, 3)
-        self.assertAlmostEqual(subtract(-2912.39, 2919992.2), -2922904.59, 2) 
+        self.assertAlmostEqual(subtract(2.1231, 21.312), -19.1889, 8)
+        self.assertAlmostEqual(subtract(-12.138, -1283.2), 1271.062, 8)
+        self.assertAlmostEqual(subtract(-2912.39, 2919992.2), -2922904.59, 8) 
 
     def test_sub_combined(self):
         self.assertEqual(subtract(21, -1.19), 22.19)
@@ -65,12 +65,12 @@ class MultiplyTest(unittest.TestCase):
         self.assertEqual(multiply(-2919389, -1000), 2919389000)
 
     def test_mul_floating(self):
-        self.assertAlmostEqual(multiply(1.293, 4.7), 6.0771, 4)
-        self.assertAlmostEqual(multiply(-183.18, 487.648), -89327.36064, 5)
+        self.assertAlmostEqual(multiply(1.293, 4.7), 6.0771, 8)
+        self.assertAlmostEqual(multiply(-183.18, 487.648), -89327.36064, 8)
 
     def test_mul_combined(self):
-        self.assertAlmostEqual(multiply(255, -16.7), -4258.5, 1)
-        self.assertAlmostEqual(multiply(-385.2, 284.1022), -109436.16744, 5)
+        self.assertAlmostEqual(multiply(255, -16.7), -4258.5, 8)
+        self.assertAlmostEqual(multiply(-385.2, 284.1022), -109436.16744, 8)
 
 class DivideTest(unittest.TestCase):
 
@@ -88,13 +88,13 @@ class DivideTest(unittest.TestCase):
         self.assertEqual(divide(-201410040, 80), -2517625.5)
 
     def test_div_floating(self):
-        self.assertAlmostEqual(divide(2.46, 1.2), 2.05, 2)
-        self.assertAlmostEqual(divide(91664, -918725), -0.0997730550, 10)
+        self.assertAlmostEqual(divide(2.46, 1.2), 2.05, 8)
+        self.assertAlmostEqual(divide(91664, -918725), -0.0997730550, 8)
 
     def test_div_combined(self):
-        self.assertAlmostEqual(divide(940, 3.333), 282.028202820, 9)
-        self.assertAlmostEqual(divide(-1920002.15, 69), -27826.1181159420, 10)
-        self.assertAlmostEqual(divide(-385.1, -1), 385.1, 1)
+        self.assertAlmostEqual(divide(940, 3.333), 282.028202820, 8)
+        self.assertAlmostEqual(divide(-1920002.15, 69), -27826.1181159420, 8)
+        self.assertAlmostEqual(divide(-385.1, -1), 385.1, 8)
 
 class FactorialTest(unittest.TestCase):
 

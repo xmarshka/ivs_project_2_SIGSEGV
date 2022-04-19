@@ -13,7 +13,7 @@
 #
 # @return sum of numbers x, y
 def add(x, y):
-    return round(x + y, 10)
+    return round(x + y, 8)
 
 ##
 # @brief Subtraction of two numbers
@@ -23,7 +23,7 @@ def add(x, y):
 #
 # @return subtraction of numbers x, y
 def subtract(x, y):
-    return round(x - y, 10)
+    return round(x - y, 8)
 
 ##
 # @brief Multiplication of two numbers
@@ -33,7 +33,7 @@ def subtract(x, y):
 #
 # @return multiplication of numbers x, y
 def multiply(x, y):
-    return round(x * y, 10)
+    return round(x * y, 8)
 
 ##
 # @brief Division of two numbers
@@ -46,7 +46,7 @@ def divide(x, y):
     if y == 0:
         raise ValueError('Division by zero')
 
-    return round(x / y, 10)
+    return round(x / y, 8)
 
 ## 
 # @brief The function calculates the nth power of the number
