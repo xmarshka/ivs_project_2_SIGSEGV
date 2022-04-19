@@ -1,108 +1,108 @@
 ##
 # @file calc.py
 #
-# @brief Python library with mathematical functions
+# @brief Kniznica s matematickymi funkciami
 # @author xvadov01, xsmata03
 #
 
 ##
-# @brief Sum of two numbers
+# @brief Funkcia vypocita vysledok scitania x+y
 #
-# @param x first number
-# @param y second number
+# @param x scitaniec - realne cislo
+# @param y scitaniec - realne cislo
 #
-# @return sum of numbers x, y
+# @return Funkcia vracia vysledok scitania x+y, zaokruhleny na 8 desatinnych miest
 def add(x, y):
     return round(x + y, 8)
 
 ##
-# @brief Subtraction of two numbers
+# @brief Funkcia vypocita vysledok odcitania x-y
 #
-# @param x first number
-# @param y second number
+# @param x mensenec - realne cislo
+# @param y menistel - realne cislo
 #
-# @return subtraction of numbers x, y
+# @return Funkcia vracia vysledok odcitania x-y, zaokruhleny na 8 desatinnych miest
 def subtract(x, y):
     return round(x - y, 8)
 
 ##
-# @brief Multiplication of two numbers
+# @brief Funkcia vypocita vysledok nasobenia x*y
 #
-# @param x first number
-# @param y second number
+# @param x cinitel - realne cislo
+# @param ycinitel - realne cislo
 #
-# @return multiplication of numbers x, y
+# @return Funkcia vracia vysledok nasobenia x*y, zaokruhleny na 8 desatinnych miest
 def multiply(x, y):
     return round(x * y, 8)
 
 ##
-# @brief Division of two numbers
+# @brief Funkcia vypocita vysledok delenia x/y
 #
-# @param x first number
-# @param y second number
+# @param x delitel - realne cislo
+# @param y delenec - realne cislo
 #
-# @return division of numbers x, y
+# @return Funkcia vracia vysledok delenia x/y, zaokruhleny na 8 desatinnych miest
 def divide(x, y):
     if y == 0:
-        raise ValueError('Division by zero')
+        raise ValueError("Delenie nulou")
 
     return round(x / y, 8)
 
 ## 
-# @brief The function calculates the nth power of the number
+# @brief Funkcia vypocita n-tu mocninu realneho cisla
 #
-# @param base Real number
-# @param exponent Natural number
+# @param base zaklad - realne cislo
+# @param exponent exponent - prirodzene cislo
 #
-# @return The result of a exponentiation
+# @return Funkcia vracia vysledok umocnenia zaokruhleny na 8 desatinnych miest
 def to_the_power_of(base, *args):
     if len(args) != 1:
-        raise ValueError("Incorrect count of arguments")
+        raise ValueError("Nespavny pocet argumentov")
     else:
         exponent = args[0]
     if not isinstance(exponent, int):
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cislo")
     elif exponent < 0:
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cisla")
     return round(base ** exponent, 8)
 
 ## 
-# @brief The function calculates the nth root of the number
+# @brief Funkcia pocita n-tu odmocninu z cisla
 #
-# @param radicand Real number
-# @param index Natural number(An optional parameter - defaul 2)
+# @param radicand odmocnenec - realne cislo
+# @param index odmocnitel - prirodzene cislo
 #
-# @return The nth root of a number   
+# @return Funkcia vracia n-tu odmocninu z cisla zaokruhlenu na 8 desatinnych miest
 def root(radicand, *args):
     if len(args) == 0:
         index = 2
     elif len(args) > 1:
-        raise ValueError("Incorrect count of arguments")
+        raise ValueError("Nespavny pocet argumentov")
     else:
         index = args[0]
     if not isinstance(index, int):
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cislo")
     elif index < 0:
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cislo")
     elif index % 2 == 0 and radicand < 0:
-        raise ValueError("Radicand must be a POSITIVE NUMBER")
+        raise ValueError("Odmocnenec musi byt nezaporne cislo")
     if radicand >= 0:
         return round(radicand ** (1/index), 8)
     else:
         return round(-abs(radicand) ** (1/index), 8)
 
 ## 
-# @brief The function to compute factorial of a natural number
+# @brief Funkcia vypocita faktorial prirodzeneho cisla
 #
-# @param number Natural number
+# @param number prirodzene cislo
 #
-# @return Factorial of a given natural number
+# @return Funkcia vracia faktorial cisla
 def factorial(number):
     factorial = 1
     if not isinstance(number, int):
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cislo")
     elif number < 0:
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cislo")
     elif number == 0:
         return factorial
     for i in range(1,number + 1):
@@ -110,16 +110,16 @@ def factorial(number):
     return factorial
 
 ## 
-# @brief Function to determine whether number is a prime number or not
+# @brief Funkcia urci, ci cislo je prvocislo
 #
-# @param number Natural number
+# @param number prirodzene cislo
 #
-# @return True if number is a prime number, else False
+# @return Funkcia vraci True, ak je cislo prvocislo, inak False
 def prime(number):
     if not isinstance(number, int):
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cislo")
     elif number < 0:
-        raise ValueError("Number must be a NATURAL NUMBER")
+        raise ValueError("Zadaj iba prirodzene cislo")
     elif number == 1 or number == 0:
         return False
     elif number & 1 == 0: # number is divisible by 2
