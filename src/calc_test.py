@@ -1,12 +1,23 @@
+'''
+# Nazov projektu: Projekt kalkulacka
+# Subor: calc_test.py
+# Datum: 24.3.2020
+# Autor: xvadov01, xsmata03
+#
+# Popis: Testy matematickej kniznice calc.py
+#
+'''
 ##
 # @file calc_test.py
-# @brief Tests of mathlib
+# @brief Testy matematickej knižnice calc.py
 
 # run with: python3 -m unittest calc_test
 
 import unittest
 from calc import *
 
+## @class Testy funkcie add
+# @param unittest.TestCase
 class AddTest(unittest.TestCase):
     
     def test_add_positive(self):
@@ -29,7 +40,8 @@ class AddTest(unittest.TestCase):
         self.assertEqual(add(-2844.1, 9288), 6443.9)
         self.assertEqual(add(-184413, -138941.22), -323354.22)
 
-
+## @class Testy funkcie substract
+# @param unittest.TestCase
 class SubtractTest(unittest.TestCase):
 
     def test_sub_positive(self):
@@ -49,6 +61,8 @@ class SubtractTest(unittest.TestCase):
         self.assertEqual(subtract(21, -1.19), 22.19)
         self.assertEqual(subtract(-3, -1.2), -1.8)
 
+## @class Testy funkcie multiply
+# @param unittest.TestCase
 class MultiplyTest(unittest.TestCase):
 
     def test_mul_zero(self):
@@ -72,6 +86,8 @@ class MultiplyTest(unittest.TestCase):
         self.assertAlmostEqual(multiply(255, -16.7), -4258.5, 8)
         self.assertAlmostEqual(multiply(-385.2, 284.1022), -109436.16744, 8)
 
+## @class Testy funkcie divide
+# @param unittest.TestCase
 class DivideTest(unittest.TestCase):
 
     def test_div_zero(self):
@@ -96,17 +112,9 @@ class DivideTest(unittest.TestCase):
         self.assertAlmostEqual(divide(-1920002.15, 69), -27826.1181159420, 8)
         self.assertAlmostEqual(divide(-385.1, -1), 385.1, 8)
 
-class FactorialTest(unittest.TestCase):
 
-    def test_factorial(self):
-        self.assertEqual(factorial(0), 1)
-        self.assertEqual(factorial(10), 3628800)
-        self.assertEqual(factorial(12), 479001600)
-        self.assertEqual(factorial(18), 6402373705728000)
-
-    def test_faulire_factorial(self):
-        self.assertRaises(ValueError, factorial, -313)                          # negative number given
-
+## @class Testy funkcie to_the_power_of
+# @param unittest.TestCase
 class ToThePowerOfTest(unittest.TestCase):
 
     def test_to_the_power_of_zero(self):
@@ -141,6 +149,8 @@ class ToThePowerOfTest(unittest.TestCase):
         self.assertRaises(ValueError, to_the_power_of, 17, -5)                     # exponent must be a Natural number (negative odd number)
         self.assertRaises(ValueError, to_the_power_of, 17, )                       # missing exponent
         
+## @class Testy funkcie root
+# @param unittest.TestCase
 class RootTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
     
     def test_root_of_zero(self):
@@ -173,6 +183,21 @@ class RootTest(unittest.TestCase): # radicand and then index: square root of 4..
         self.assertRaises(ValueError, root, 313, -3.17)              # root index must be a Natural number
         self.assertRaises(ValueError, root, 17, -5)                  # root index must be a Natural number
 
+## @class Testy funkcie factorial
+# @param unittest.TestCase
+class FactorialTest(unittest.TestCase):
+
+    def test_factorial(self):
+        self.assertEqual(factorial(0), 1)
+        self.assertEqual(factorial(10), 3628800)
+        self.assertEqual(factorial(12), 479001600)
+        self.assertEqual(factorial(18), 6402373705728000)
+
+    def test_faulire_factorial(self):
+        self.assertRaises(ValueError, factorial, -313)                          # negative number given
+
+## @class Testy funkcie prime
+# @param unittest.TestCase
 class PrimeNumberTest(unittest.TestCase): # radicand and then index: square root of 4... root(4, 2) or root(4, )
     
     def test_prime(self):
