@@ -62,7 +62,7 @@ def divide(x, y):
 # @brief Funkcia vypočíta n-tú mocninu reálneho čísla
 #
 # @param base základ - reálne číslo
-# @param exponent exponent - prirodzené číslo
+# @param args exponent - prirodzené číslo
 #
 # @return Funkcia vracia výsledok umocnenia zaokrúhlený na 8 desatinných miest
 def to_the_power_of(base, *args):
@@ -80,7 +80,7 @@ def to_the_power_of(base, *args):
 # @brief Funkcia vypočíta n-tú odmocninu z čísla
 #
 # @param radicand odmocnenec - reálne číslo
-# @param index odmocniteľ - prirodzené cislo
+# @param args odmocniteľ - prirodzené cislo alebo nič, potom sa doplní 2
 #
 # @return Funkcia vracia n-tú odmocninu z čísla zaokrúhlenú na 8 desatinných miest
 def root(radicand, *args):
@@ -92,7 +92,7 @@ def root(radicand, *args):
         index = args[0]
     if not isinstance(index, int):
         raise ValueError("Zadaj iba prirodzene cislo")
-    elif index < 0:
+    elif index <= 0:
         raise ValueError("Zadaj iba prirodzene cislo")
     elif index % 2 == 0 and radicand < 0:
         raise ValueError("Odmocnenec musi byt nezaporne cislo")
