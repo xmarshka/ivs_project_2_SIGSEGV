@@ -1,6 +1,12 @@
+import random
 from sys import stdin
 from calc import *
 
+##
+# @brief Vyberova smerodatna odchylka
+#
+# @param numbers pole cisel
+#
 def standard_deviation(numbers):
     n = len(numbers)
     x_avg = 0
@@ -16,11 +22,27 @@ def standard_deviation(numbers):
 
     print(s) # vysledok smerovej odchylky 
 
+##
+# @brief Vyplneni pole nahodnymi cislami
+#
+# @param n pocet cisel v poli
+# @param numbers pole cisel
+#
+def generate_numbers(n, numbers):
+    random.seed() # nastavenie seedu na systemovy cas
+    for i in range(1, n+1):
+        # append to numbers array random integer
+        numbers.append(random.randint(1, 1000))
+
 if __name__ == '__main__':
     inputs = []
     # nacitaj cisla zo stdin oddelene medzerami
-    for line in stdin:
-        inputs.extend(line.split())
-        if not inputs:
-            break # prazdny riadok
+    if not stdin.isatty():
+        for line in stdin:
+            inputs.extend(line.split())
+            if not inputs:
+                break # prazdny riadok
+    else:
+        generate_numbers(1000, inputs)
+
     standard_deviation(inputs)
