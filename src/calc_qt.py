@@ -16,6 +16,7 @@ class Ui(QtWidgets.QDialog):
 		uic.loadUi(dir_path + r'\res\calc1.ui', self)
 		self.screen = self.findChild(QtWidgets.QLabel, 'screen')
 		self.opScreen = self.findChild(QtWidgets.QLabel, 'opScreen')
+		self.prevScreen = self.findChild(QtWidgets.QLabel, 'prevScreen')
 
 		# NUMBERS
 		self.n1.clicked.connect(self.n1Pressed)
@@ -43,6 +44,7 @@ class Ui(QtWidgets.QDialog):
 
 		# VARIABLES
 		self.display = "0"
+		self.prevDisplay = ""
 		self.cleared = True
 		self.decimal = False
 		self.first = 0
@@ -50,6 +52,7 @@ class Ui(QtWidgets.QDialog):
 		self.operation = False
 		self.screen.setText("0")
 		self.opScreen.setText("")
+		self.prevScreen.setText("")
 
 		self.show()
 
@@ -63,9 +66,11 @@ class Ui(QtWidgets.QDialog):
 
 	def binaryOperation(self, operation, symbol):
 		self.first = float(self.display)
+		self.prevDisplay = str(self.first) + symbol
 		self.zeroPressed()
 		self.operation = operation
 		self.opScreen.setText(symbol)
+		self.prevScreen.setText(self.prevDisplay)
 
 	def n1Pressed(self):
 		self.nPrint("1")
@@ -133,10 +138,14 @@ class Ui(QtWidgets.QDialog):
 				self.cleared = True
 				self.decimal = False
 				self.screen.setText("ERROR: " + str(e))
+				self.opScreen.setText("E")
 				return
 
 			if answer.is_integer():
 				answer = int(answer)
+
+			self.prevDisplay += str(self.second)
+			self.prevScreen.setText(self.prevDisplay)
 			self.display = str(answer)
 			self.cleared = True
 			self.decimal = False
@@ -144,6 +153,8 @@ class Ui(QtWidgets.QDialog):
 			self.opScreen.setText("=")
 
 	def pclearPressed(self):
+		self.prevDisplay = ""
+		self.prevScreen.setText(self.prevDisplay)
 		self.display = "0"
 		self.first = 0
 		self.second = False
@@ -151,7 +162,7 @@ class Ui(QtWidgets.QDialog):
 		self.cleared = True
 		self.decimal = False
 		self.screen.setText(self.display)
-		self.opScreen.setText("")
+		self.opScreen.setText("C")
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
