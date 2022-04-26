@@ -7,14 +7,15 @@ from calc import *
 import sys
 import os
 
-class Ui(QtWidgets.QMainWindow):
+class Ui(QtWidgets.QDialog):
 	def __init__(self):
 		super(Ui, self).__init__()
 
 		# Get relative path to this script, idk if this is the best way to do it though
 		dir_path = os.path.dirname(os.path.realpath(__file__))
 		uic.loadUi(dir_path + r'\res\calc1.ui', self)
-		self.screen = self.findChild(QtWidgets.QLabel, 'screen') # Find the button
+		self.screen = self.findChild(QtWidgets.QLabel, 'screen')
+		self.opScreen = self.findChild(QtWidgets.QLabel, 'opScreen')
 
 		# NUMBERS
 		self.n1.clicked.connect(self.n1Pressed)
@@ -48,6 +49,7 @@ class Ui(QtWidgets.QMainWindow):
 		self.second = 0
 		self.operation = False
 		self.screen.setText("0")
+		self.opScreen.setText("")
 
 		self.show()
 
@@ -59,10 +61,11 @@ class Ui(QtWidgets.QMainWindow):
 			self.display += value
 		self.screen.setText(self.display)
 
-	def binaryOperation(self, operation):
+	def binaryOperation(self, operation, symbol):
 		self.first = float(self.display)
 		self.zeroPressed()
 		self.operation = operation
+		self.opScreen.setText(symbol)
 
 	def n1Pressed(self):
 		self.nPrint("1")
@@ -110,16 +113,16 @@ class Ui(QtWidgets.QMainWindow):
 		self.screen.setText(self.display)
 
 	def mAddPressed(self):
-		self.binaryOperation(add)
+		self.binaryOperation(add, "+")
 	
 	def mMulPressed(self):
-		self.binaryOperation(multiply)
+		self.binaryOperation(multiply, "*")
 
 	def mSubPressed(self):
-		self.binaryOperation(subtract)
+		self.binaryOperation(subtract, "-")
 
 	def mDivPressed(self):
-		self.binaryOperation(divide)
+		self.binaryOperation(divide, "/")
 
 	def resultPressed(self):
 		if self.operation:
@@ -138,6 +141,7 @@ class Ui(QtWidgets.QMainWindow):
 			self.cleared = True
 			self.decimal = False
 			self.screen.setText(self.display)
+			self.opScreen.setText("=")
 
 	def pclearPressed(self):
 		self.display = "0"
@@ -147,6 +151,7 @@ class Ui(QtWidgets.QMainWindow):
 		self.cleared = True
 		self.decimal = False
 		self.screen.setText(self.display)
+		self.opScreen.setText("")
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
