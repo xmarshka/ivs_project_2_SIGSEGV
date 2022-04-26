@@ -110,11 +110,13 @@ def root(radicand, *args):
 #
 # @return Funkcia vracia faktoriál čísla
 def factorial(number):
+    if number > 30:
+        raise ValueError("Číslo mimo intervalu <0,30>")
     factorial = 1
     if not isinstance(number, int):
         raise ValueError("Zadaj iba prirodzene cislo")
     elif number < 0:
-        raise ValueError("Zadaj iba prirodzene cislo")
+        raise ValueError("Číslo mimo intervalu <0,30>")
     elif number == 0:
         return factorial
     for i in range(1,number + 1):
