@@ -85,10 +85,11 @@ class Ui(QtWidgets.QDialog):
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = False
 
-	def unaryOperation(self, operation, symbol):
+	def unaryOperation(self, operation, symbol, lastUnaryOperation):
 		if not self.equalsLast:
 			self.resultPressed()
 
+		self.unaryLast = lastUnaryOperation
 		self.first = float(self.display)
 		if self.first.is_integer():
 			self.first = int(self.first)
@@ -196,16 +197,13 @@ class Ui(QtWidgets.QDialog):
 		self.binaryOperation(root, "rt")
 
 	def mSquaredPressed(self):
-		self.unaryOperation(to_the_power_of, "s")
-		self.unaryLast = self.mSquaredPressed
+		self.unaryOperation(to_the_power_of, "s", self.mSquaredPressed)
 
 	def mSqrtPressed(self):
-		self.unaryOperation(root, "sqrt")
-		self.unaryLast = self.mSqrtPressed
+		self.unaryOperation(root, "sqrt", self.mSqrtPressed)
 
 	def mFactorialPressed(self):
-		self.unaryOperation(factorial, "fact")
-		self.unaryLast = self.mFactorialPressed
+		self.unaryOperation(factorial, "fact", self.mFactorialPressed)
 
 	def mPrimePressed(self):
 		if not self.equalsLast:
@@ -271,7 +269,12 @@ class Ui(QtWidgets.QDialog):
 			except ValueError as e:
 				self.cleared = True
 				self.decimal = False
+				self.display = "0"
 				self.screen.setText("ERROR: " + str(e))
+				self.operation = False
+				self.unaryLast = False
+				self.first = 0
+				self.second = 0
 				return
 
 			if isinstance(self.answer, float):
