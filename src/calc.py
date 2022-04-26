@@ -79,7 +79,7 @@ def to_the_power_of(base, *args):
     try:
         base ** exponent
     except OverflowError:
-        raise ValueError("Vysoké číslo")
+        raise ValueError("Príliš vysoké číslo")
     else:
         return round(base ** exponent, 8)
 
