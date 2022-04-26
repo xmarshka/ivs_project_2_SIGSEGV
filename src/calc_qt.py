@@ -299,6 +299,7 @@ class Ui(QtWidgets.QDialog):
 		self.equalsLast = False
 		self.operation = False
 		self.cleared = True
+		self.unaryLast = False
 		self.decimal = False
 		self.screen.setText(self.display)
 
