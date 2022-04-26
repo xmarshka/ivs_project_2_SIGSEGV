@@ -71,7 +71,6 @@ class Ui(QtWidgets.QDialog):
 		else:
 			self.display += value
 		self.screen.setText(self.display)
-		self.equalsLast = False
 
 	def binaryOperation(self, operation, symbol):
 		self.unaryLast = False
@@ -104,13 +103,6 @@ class Ui(QtWidgets.QDialog):
 		self.operation = operation
 		self.prevScreen.setText(self.prevDisplay)
 
-		if self.equalsLast:
-			self.prevDisplay = str(float(self.answer)) + self.symbol
-		else:
-			self.second = float(self.display)
-			if self.second.is_integer():
-				self.second = int(self.second)
-
 		try:
 			self.answer = self.operation(self.first)
 		except ValueError as e:
@@ -130,6 +122,7 @@ class Ui(QtWidgets.QDialog):
 
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = True
+		# TODO: define upper limit on answers
 		if self.answer > 10 ** 12:
 			self.display = "{:e}".format(self.answer)
 		else:
@@ -170,7 +163,6 @@ class Ui(QtWidgets.QDialog):
 		self.nPrint("0")
 
 	def dotPressed(self):
-		self.equalsLast = False
 		if self.cleared:
 			self.display = "0"
 		if self.decimal == False:
@@ -183,7 +175,6 @@ class Ui(QtWidgets.QDialog):
 		self.display = "0"
 		self.cleared = True
 		self.decimal = False
-		self.equalsLast = False
 		self.screen.setText(self.display)
 
 	def mAddPressed(self):
@@ -226,13 +217,6 @@ class Ui(QtWidgets.QDialog):
 		self.zeroPressed()
 		self.operation = prime
 		self.prevScreen.setText(self.prevDisplay)
-
-		if self.equalsLast:
-				self.prevDisplay = str(float(self.answer)) + self.symbol
-		else:
-			self.second = float(self.display)
-			if self.second.is_integer():
-				self.second = int(self.second)
 
 		try:
 			self.answer = self.operation(self.first)
