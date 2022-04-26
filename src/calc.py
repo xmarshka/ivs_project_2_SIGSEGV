@@ -69,35 +69,35 @@ def to_the_power_of(base, *args):
     if len(args) == 0:
         exponent = 2
     elif len(args) > 1:
-        raise ValueError("Nespavny pocet argumentov")
+        raise ValueError("Nespavny počet argumentov")
     else:
         exponent = args[0]
     if not isinstance(exponent, int):
-        raise ValueError("Zadaj iba prirodzene cislo")
+        raise ValueError("Zadaj prirodzené číslo")
     elif exponent < 0:
-        raise ValueError("Zadaj iba prirodzene čísla")
+        raise ValueError("Zadaj prirodzené čísla")
     return round(base ** exponent, 8)
 
 ## 
 # @brief Funkcia vypočíta n-tú odmocninu z čísla
 #
 # @param radicand odmocnenec - reálne číslo
-# @param args odmocniteľ - prirodzené cislo alebo nič, potom sa doplní 2
+# @param args odmocniteľ - prirodzené číslo alebo nič, potom sa doplní 2
 #
 # @return Funkcia vracia n-tú odmocninu z čísla zaokrúhlenú na 8 desatinných miest
 def root(radicand, *args):
     if len(args) == 0:
         index = 2
     elif len(args) > 1:
-        raise ValueError("Nespavny pocet argumentov")
+        raise ValueError("Nesprávny počet argumentov")
     else:
         index = args[0]
     if not isinstance(index, int):
-        raise ValueError("Zadaj iba prirodzene cislo")
+        raise ValueError("Zadaj prirodzené číslo")
     elif index <= 0:
-        raise ValueError("Zadaj iba prirodzene cislo")
+        raise ValueError("Zadaj prirodzené číslo")
     elif index % 2 == 0 and radicand < 0:
-        raise ValueError("Odmocnenec musi byt nezaporne cislo")
+        raise ValueError("Záporný odmocnenec")
     if radicand >= 0:
         return round(radicand ** (1/index), 8)
     else:
@@ -114,7 +114,7 @@ def factorial(number):
         raise ValueError("Číslo mimo intervalu <0,30>")
     factorial = 1
     if not isinstance(number, int):
-        raise ValueError("Zadaj iba prirodzene cislo")
+        raise ValueError("Zadaj prirodzené číslo")
     elif number < 0:
         raise ValueError("Číslo mimo intervalu <0,30>")
     elif number == 0:
@@ -131,9 +131,9 @@ def factorial(number):
 # @return Funkcia vraci True, ak je číslo pročíslo, inak False
 def prime(number):
     if not isinstance(number, int):
-        raise ValueError("Zadaj iba prirodzene cislo")
+        raise ValueError("Zadaj prirodzené číslo")
     elif number < 0:
-        raise ValueError("Zadaj iba prirodzene cislo")
+        raise ValueError("Zadaj prirodzené číslo")
     elif number == 1 or number == 0:
         return False
     elif number & 1 == 0: # number is divisible by 2
