@@ -93,14 +93,19 @@ class Ui(QtWidgets.QDialog):
 		self.first = float(self.display)
 		if self.first.is_integer():
 			self.first = int(self.first)
-		self.prevDisplay = symbol + "(" + str(self.first) + ")"
+
+		if self.first > 10 ** 12:
+			self.prevDisplay = symbol + "(" + "{:e}".format(self.first) + ")"
+		else:
+			self.prevDisplay = symbol + "(" + str(self.first) + ")"
+
 		self.symbol = symbol
 		self.zeroPressed()
 		self.operation = operation
 		self.prevScreen.setText(self.prevDisplay)
 
 		if self.equalsLast:
-				self.prevDisplay = str(float(self.answer)) + self.symbol
+			self.prevDisplay = str(float(self.answer)) + self.symbol
 		else:
 			self.second = float(self.display)
 			if self.second.is_integer():
@@ -125,7 +130,10 @@ class Ui(QtWidgets.QDialog):
 
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = True
-		self.display = str(self.answer)
+		if self.answer > 10 ** 12:
+			self.display = "{:e}".format(self.answer)
+		else:
+			self.display = str(self.answer)
 		self.cleared = True
 		self.decimal = False
 		self.first = self.answer
@@ -284,7 +292,10 @@ class Ui(QtWidgets.QDialog):
 			self.prevDisplay += str(self.second)
 			self.prevScreen.setText(self.prevDisplay)
 			self.equalsLast = True
-			self.display = str(self.answer)
+			if self.answer > 10 ** 12:
+				self.display = "{:e}".format(self.answer)
+			else:
+				self.display = str(self.answer)
 			self.cleared = True
 			self.decimal = False
 			self.first = self.answer
