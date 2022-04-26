@@ -45,8 +45,11 @@ class Ui(QtWidgets.QDialog):
 		# VARIABLES
 		self.display = "0"
 		self.prevDisplay = ""
+		self.answer = 0
+		self.equalsLast = False
 		self.cleared = True
 		self.decimal = False
+		self.symbol = ""
 		self.first = 0
 		self.second = 0
 		self.operation = False
@@ -63,14 +66,17 @@ class Ui(QtWidgets.QDialog):
 		else:
 			self.display += value
 		self.screen.setText(self.display)
+		self.equalsLast = False
 
 	def binaryOperation(self, operation, symbol):
 		self.first = float(self.display)
 		self.prevDisplay = str(self.first) + symbol
+		self.symbol = symbol
 		self.zeroPressed()
 		self.operation = operation
 		self.opScreen.setText(symbol)
 		self.prevScreen.setText(self.prevDisplay)
+		self.equalsLast = False
 
 	def n1Pressed(self):
 		self.nPrint("1")
@@ -103,6 +109,7 @@ class Ui(QtWidgets.QDialog):
 		self.nPrint("0")
 
 	def dotPressed(self):
+		self.equalsLast = False
 		if self.cleared:
 			self.display = "0"
 		if self.decimal == False:
@@ -115,6 +122,7 @@ class Ui(QtWidgets.QDialog):
 		self.display = "0"
 		self.cleared = True
 		self.decimal = False
+		self.equalsLast = False
 		self.screen.setText(self.display)
 
 	def mAddPressed(self):
@@ -131,9 +139,13 @@ class Ui(QtWidgets.QDialog):
 
 	def resultPressed(self):
 		if self.operation:
-			self.second = float(self.display)
+			if self.equalsLast:
+				self.prevDisplay = str(float(self.answer)) + self.symbol
+			else:
+				self.second = float(self.display)
+
 			try:
-				answer = self.operation(self.first, self.second)
+				self.answer = self.operation(self.first, self.second)
 			except ValueError as e:
 				self.cleared = True
 				self.decimal = False
@@ -141,14 +153,17 @@ class Ui(QtWidgets.QDialog):
 				self.opScreen.setText("E")
 				return
 
-			if answer.is_integer():
-				answer = int(answer)
+			if self.answer.is_integer():
+				self.answer = int(self.answer)
+
 
 			self.prevDisplay += str(self.second)
 			self.prevScreen.setText(self.prevDisplay)
-			self.display = str(answer)
+			self.equalsLast = True
+			self.display = str(self.answer)
 			self.cleared = True
 			self.decimal = False
+			self.first = self.answer
 			self.screen.setText(self.display)
 			self.opScreen.setText("=")
 
@@ -158,6 +173,7 @@ class Ui(QtWidgets.QDialog):
 		self.display = "0"
 		self.first = 0
 		self.second = False
+		self.equalsLast = False
 		self.operation = False
 		self.cleared = True
 		self.decimal = False
