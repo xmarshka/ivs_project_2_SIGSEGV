@@ -219,7 +219,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>310</x>
-     <y>191</y>
+     <y>261</y>
      <width>60</width>
      <height>60</height>
     </rect>
@@ -271,7 +271,7 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>380</x>
-     <y>191</y>
+     <y>261</y>
      <width>60</width>
      <height>60</height>
     </rect>
@@ -371,11 +371,11 @@ background-color: rgb(255, 255, 255);</string>
     <string>1</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="bPerentheses">
+  <widget class="QPushButton" name="mSquared">
    <property name="geometry">
     <rect>
      <x>310</x>
-     <y>261</y>
+     <y>191</y>
      <width>60</width>
      <height>60</height>
     </rect>
@@ -394,7 +394,7 @@ background-color: rgb(255, 255, 255);</string>
 background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>(</string>
+    <string>^2</string>
    </property>
   </widget>
   <widget class="QPushButton" name="n3">
@@ -423,11 +423,11 @@ background-color: rgb(255, 255, 255);</string>
     <string>3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="ePerentheses">
+  <widget class="QPushButton" name="mSqrt">
    <property name="geometry">
     <rect>
      <x>380</x>
-     <y>261</y>
+     <y>191</y>
      <width>60</width>
      <height>60</height>
     </rect>
@@ -446,7 +446,7 @@ background-color: rgb(255, 255, 255);</string>
 background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>)</string>
+    <string>2√</string>
    </property>
   </widget>
   <widget class="QPushButton" name="mMul">
@@ -550,7 +550,7 @@ background-color: rgb(255, 255, 255);</string>
 background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>0</string>
+    <string>00</string>
    </property>
   </widget>
   <widget class="QPushButton" name="del">

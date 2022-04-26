@@ -39,6 +39,8 @@ class Ui(QtWidgets.QDialog):
 		self.mMul.clicked.connect(self.mMulPressed)
 		self.mSub.clicked.connect(self.mSubPressed)
 		self.mDiv.clicked.connect(self.mDivPressed)
+		self.mSquared.clicked.connect(self.mSquaredPressed)
+		self.mSqrt.clicked.connect(self.mSqrtPressed)
 		self.result.clicked.connect(self.resultPressed)
 		self.clear.clicked.connect(self.pclearPressed)
 
@@ -77,6 +79,42 @@ class Ui(QtWidgets.QDialog):
 		self.opScreen.setText(symbol)
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = False
+
+	def unaryOperation(self, operation, symbol):
+		self.first = float(self.display)
+		self.prevDisplay = symbol + "(" + str(self.first) + ")"
+		self.symbol = symbol
+		self.zeroPressed()
+		self.operation = operation
+		self.opScreen.setText(symbol)
+		self.prevScreen.setText(self.prevDisplay)
+		#self.equalsLast = False
+
+		if self.equalsLast:
+				self.prevDisplay = str(float(self.answer)) + self.symbol
+		else:
+			self.second = float(self.display)
+
+		try:
+			self.answer = self.operation(self.first)
+		except ValueError as e:
+			self.cleared = True
+			self.decimal = False
+			self.screen.setText("ERROR: " + str(e))
+			self.opScreen.setText("E")
+			return
+
+		if self.answer.is_integer():
+			self.answer = int(self.answer)
+
+		self.prevScreen.setText(self.prevDisplay)
+		self.equalsLast = True
+		self.display = str(self.answer)
+		self.cleared = True
+		self.decimal = False
+		self.first = self.answer
+		self.screen.setText(self.display)
+		self.opScreen.setText("=")
 
 	def n1Pressed(self):
 		self.nPrint("1")
@@ -136,6 +174,12 @@ class Ui(QtWidgets.QDialog):
 
 	def mDivPressed(self):
 		self.binaryOperation(divide, "/")
+
+	def mSquaredPressed(self):
+		self.unaryOperation(to_the_power_of, "s")
+
+	def mSqrtPressed(self):
+		self.unaryOperation(root, "r")
 
 	def resultPressed(self):
 		if self.operation:

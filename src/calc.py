@@ -66,7 +66,9 @@ def divide(x, y):
 #
 # @return Funkcia vracia výsledok umocnenia zaokrúhlený na 8 desatinných miest
 def to_the_power_of(base, *args):
-    if len(args) != 1:
+    if len(args) == 0:
+        exponent = 2
+    elif len(args) > 1:
         raise ValueError("Nespavny pocet argumentov")
     else:
         exponent = args[0]
