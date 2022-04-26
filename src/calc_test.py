@@ -211,20 +211,19 @@ class ToThePowerOfTest(unittest.TestCase):
         self.assertEqual(to_the_power_of(997, 2), 994009)
         self.assertEqual(to_the_power_of(-191, 2), 36481)
         self.assertEqual(to_the_power_of(-313, 2), 97969)
+        self.assertEqual(to_the_power_of(4,), 16)
 
     ##
     # @test Umocňovanie záporným párnym číslom - ValueError
     # @test Umocňovanie desatinným číslom - ValueError
     # @test Umocňovanie záporným desatinným číslo - ValueError
     # @test Umocňovanie záporným nepárnym číslom - ValueError
-    # @test Chýbajúci exponent - ValueError
     # @param self Ukazateľ na triedu 
     def test_failure_to_the_power_of(self):
         self.assertRaises(ValueError, to_the_power_of, -313, -2)                   # exponent must be a Natural number (negative even number)
         self.assertRaises(ValueError, to_the_power_of, 191, 7.3)                   # exponent must be a Natural number (floating point number)
         self.assertRaises(ValueError, to_the_power_of, 313, -3.17)                 # exponent must be a Natural number (negative floating point number)
         self.assertRaises(ValueError, to_the_power_of, 17, -5)                     # exponent must be a Natural number (negative odd number)
-        self.assertRaises(ValueError, to_the_power_of, 17, )                       # missing exponent
         
 ## @class RootTest
 # @brief Testy funkcie root()
