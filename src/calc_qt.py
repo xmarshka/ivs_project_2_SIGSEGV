@@ -2,113 +2,158 @@
 
 #pip install PyQt5
 
+from PyQt5 import QtWidgets, uic, Qt
+from calc import *
 import sys
 import os
 
-# Import QApplication and the required widgets from PyQt5.QtWidgets
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QGridLayout
-from PyQt5.QtWidgets import QLineEdit
-from PyQt5.QtWidgets import QPushButton
-from PyQt5.QtWidgets import QVBoxLayout
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtGui import QFont
-from PyQt5.QtGui import QFontDatabase
-
-# Create a subclass of QMainWindow to setup the calculator's GUI
-class PyCalcUi(QMainWindow):
-	"""PyCalc's View (GUI)."""
+class Ui(QtWidgets.QDialog):
 	def __init__(self):
-		"""View initializer."""
-		super().__init__()
-		# Set some main window's properties
-		self.setWindowTitle('PyCalc')
-		self.setFixedSize(470, 470)
-		# Set the central widget and the general layout
-		self.generalLayout = QVBoxLayout()
-		self._centralWidget = QWidget(self)
-		self.setCentralWidget(self._centralWidget)
-		self._centralWidget.setLayout(self.generalLayout)
-		# Create the display and the buttons
-		self._createDisplay()
-		self._createButtons()
+		super(Ui, self).__init__()
 
-	def _createDisplay(self):
-		"""Create the display."""
-		# Create the display widget
-		self.display = QLineEdit()
-		# Set some display's properties
-		self.display.setFixedHeight(70)
-		self.display.setAlignment(Qt.AlignRight)
-		self.display.setReadOnly(True)
-		# Add the display to the general layout
-		self.generalLayout.addWidget(self.display)
-
-	def _createButtons(self):
-		"""Create the buttons."""
-		self.buttons = {}
-		buttonsLayout = QGridLayout()
-		# Button text | position on the QGridLayout
-		buttons = {'7': (0, 0),
-				   '8': (0, 1),
-				   '9': (0, 2),
-				   '/': (0, 3),
-				   'C': (0, 4),
-				   '4': (1, 0),
-				   '5': (1, 1),
-				   '6': (1, 2),
-				   '*': (1, 3),
-				   '(': (1, 4),
-				   '1': (2, 0),
-				   '2': (2, 1),
-				   '3': (2, 2),
-				   '-': (2, 3),
-				   ')': (2, 4),
-				   '0': (3, 0),
-				   '00': (3, 1),
-				   '.': (3, 2),
-				   '+': (3, 3),
-				   '=': (3, 4),
-				  }
-				
 		# Get relative path to this script, idk if this is the best way to do it though
 		dir_path = os.path.dirname(os.path.realpath(__file__))
-		QFontDatabase.addApplicationFont(dir_path + r"\res\Canterbury.ttf")
+		uic.loadUi(dir_path + r'\res\calc1.ui', self)
+		self.screen = self.findChild(QtWidgets.QLabel, 'screen')
+		self.opScreen = self.findChild(QtWidgets.QLabel, 'opScreen')
 
-		# Create the buttons and add them to the grid layout
-		for btnText, pos in buttons.items():
-			self.buttons[btnText] = QPushButton(btnText)
-			self.buttons[btnText].setFixedSize(80, 80)
-			self.buttons[btnText].setFont(QFont("Canterbury", 25))
-			buttonsLayout.addWidget(self.buttons[btnText], pos[0], pos[1])
-		# Add buttonsLayout to the general layout
-		self.generalLayout.addLayout(buttonsLayout)
+		# NUMBERS
+		self.n1.clicked.connect(self.n1Pressed)
+		self.n2.clicked.connect(self.n2Pressed)
+		self.n3.clicked.connect(self.n3Pressed)
+		self.n4.clicked.connect(self.n4Pressed)
+		self.n5.clicked.connect(self.n5Pressed)
+		self.n6.clicked.connect(self.n6Pressed)
+		self.n7.clicked.connect(self.n7Pressed)
+		self.n8.clicked.connect(self.n8Pressed)
+		self.n9.clicked.connect(self.n9Pressed)
+		self.n0.clicked.connect(self.n0Pressed)
 
-	def setDisplayText(self, text):
-		"""Set display's text."""
-		self.display.setText(text)
-		self.display.setFocus()
+		# MISC
+		self.dot.clicked.connect(self.dotPressed)
+		self.zero.clicked.connect(self.zeroPressed)
 
-	def displayText(self):
-		"""Get display's text."""
-		return self.display.text()
+		# OPERATIONS
+		self.mAdd.clicked.connect(self.mAddPressed)
+		self.mMul.clicked.connect(self.mMulPressed)
+		self.mSub.clicked.connect(self.mSubPressed)
+		self.mDiv.clicked.connect(self.mDivPressed)
+		self.result.clicked.connect(self.resultPressed)
+		self.clear.clicked.connect(self.pclearPressed)
 
-	def clearDisplay(self):
-		"""Clear the display."""
-		self.setDisplayText('')
+		# VARIABLES
+		self.display = "0"
+		self.cleared = True
+		self.decimal = False
+		self.first = 0
+		self.second = 0
+		self.operation = False
+		self.screen.setText("0")
+		self.opScreen.setText("")
 
-# Client code
-def main():
-	"""Main function."""
-	# Create an instance of QApplication
-	pycalc = QApplication(sys.argv)
-	# Show the calculator's GUI
-	view = PyCalcUi()
-	view.show()
-	# Execute the calculator's main loop
-	sys.exit(pycalc.exec_())
+		self.show()
 
-if __name__ == '__main__':
-	main()
+	def nPrint(self, value):
+		if self.cleared:
+			self.display = value
+			self.cleared = False
+		else:
+			self.display += value
+		self.screen.setText(self.display)
+
+	def binaryOperation(self, operation, symbol):
+		self.first = float(self.display)
+		self.zeroPressed()
+		self.operation = operation
+		self.opScreen.setText(symbol)
+
+	def n1Pressed(self):
+		self.nPrint("1")
+	
+	def n2Pressed(self):
+		self.nPrint("2")
+
+	def n3Pressed(self):
+		self.nPrint("3")
+
+	def n4Pressed(self):
+		self.nPrint("4")
+
+	def n5Pressed(self):
+		self.nPrint("5")
+
+	def n6Pressed(self):
+		self.nPrint("6")
+
+	def n7Pressed(self):
+		self.nPrint("7")
+
+	def n8Pressed(self):
+		self.nPrint("8")
+
+	def n9Pressed(self):
+		self.nPrint("9")
+
+	def n0Pressed(self):
+		self.nPrint("0")
+
+	def dotPressed(self):
+		if self.cleared:
+			self.display = "0"
+		if self.decimal == False:
+			self.display += "."
+			self.decimal = True
+			self.cleared = False
+			self.screen.setText(self.display)
+
+	def zeroPressed(self):
+		self.display = "0"
+		self.cleared = True
+		self.decimal = False
+		self.screen.setText(self.display)
+
+	def mAddPressed(self):
+		self.binaryOperation(add, "+")
+	
+	def mMulPressed(self):
+		self.binaryOperation(multiply, "*")
+
+	def mSubPressed(self):
+		self.binaryOperation(subtract, "-")
+
+	def mDivPressed(self):
+		self.binaryOperation(divide, "/")
+
+	def resultPressed(self):
+		if self.operation:
+			self.second = float(self.display)
+			try:
+				answer = self.operation(self.first, self.second)
+			except ValueError as e:
+				self.cleared = True
+				self.decimal = False
+				self.screen.setText("ERROR: " + str(e))
+				return
+
+			if answer.is_integer():
+				answer = int(answer)
+			self.display = str(answer)
+			self.cleared = True
+			self.decimal = False
+			self.screen.setText(self.display)
+			self.opScreen.setText("=")
+
+	def pclearPressed(self):
+		self.display = "0"
+		self.first = 0
+		self.second = False
+		self.operation = False
+		self.cleared = True
+		self.decimal = False
+		self.screen.setText(self.display)
+		self.opScreen.setText("")
+
+app = QtWidgets.QApplication(sys.argv)
+window = Ui()
+window.setFixedSize(window.size())
+app.exec_()
