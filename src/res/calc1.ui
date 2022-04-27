@@ -553,7 +553,7 @@ background-color: rgb(255, 255, 255);</string>
     <string>00</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="del">
+  <widget class="QPushButton" name="deleteLast">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -659,7 +659,7 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>30</x>
      <y>60</y>
-     <width>341</width>
+     <width>271</width>
      <height>41</height>
     </rect>
    </property>
@@ -691,7 +691,7 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>30</x>
      <y>90</y>
-     <width>341</width>
+     <width>271</width>
      <height>20</height>
     </rect>
    </property>
@@ -722,9 +722,9 @@ background-color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="prevScreen">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>30</x>
      <y>30</y>
-     <width>281</width>
+     <width>271</width>
      <height>41</height>
     </rect>
    </property>
@@ -750,6 +750,29 @@ color: rgb(75, 75, 75);</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="switchSign">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>51</y>
+     <width>60</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Century Gothic</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>+/-</string>
    </property>
   </widget>
  </widget>

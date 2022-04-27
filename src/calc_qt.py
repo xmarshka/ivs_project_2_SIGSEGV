@@ -32,6 +32,8 @@ class Ui(QtWidgets.QDialog):
 		# MISC
 		self.dot.clicked.connect(self.dotPressed)
 		self.zero.clicked.connect(self.zeroPressed)
+		self.switchSign.clicked.connect(self.switchSignPressed)
+		self.deleteLast.clicked.connect(self.deleteLastPressed)
 
 		# OPERATIONS
 		self.mAdd.clicked.connect(self.mAddPressed)
@@ -177,6 +179,30 @@ class Ui(QtWidgets.QDialog):
 		self.decimal = False
 		self.screen.setText(self.display)
 
+	def switchSignPressed(self):
+		if self.display[0] == "-":
+			self.display = self.display[1 : : ]
+			self.screen.setText(self.display)
+		else:
+			self.display = "-" + self.display
+			self.screen.setText(self.display)
+
+	def deleteLastPressed(self):
+		self.cleared = True
+		self.decimal = False
+		if len(self.display) == 2:
+			if self.display[0] == "-":
+				self.display = "0"
+			else:
+				self.display = self.display[:-1]
+			self.screen.setText(self.display)
+		elif len(self.display) == 1:
+			self.display = "0"
+			self.screen.setText(self.display)
+		else:
+			self.display = self.display[:-1]
+			self.screen.setText(self.display)
+
 	def mAddPressed(self):
 		self.binaryOperation(add, "+")
 	
@@ -193,10 +219,20 @@ class Ui(QtWidgets.QDialog):
 		self.binaryOperation(to_the_power_of, "^")
 
 	def mRootPressed(self):
-		self.binaryOperation(root, "rt")
+		#self.binaryOperation(root, "√")
+		self.unaryLast = False
+		self.first = float(self.display)
+		if self.first.is_integer():
+			self.first = int(self.first)
+		self.prevDisplay = "√" + str(self.first)
+		self.symbol = "√"
+		self.zeroPressed()
+		self.operation = root
+		self.prevScreen.setText(self.prevDisplay)
+		self.equalsLast = False
 
 	def mSquaredPressed(self):
-		self.unaryOperation(to_the_power_of, "s", self.mSquaredPressed)
+		self.unaryOperation(to_the_power_of, "squared", self.mSquaredPressed)
 
 	def mSqrtPressed(self):
 		self.unaryOperation(root, "sqrt", self.mSqrtPressed)
@@ -273,7 +309,11 @@ class Ui(QtWidgets.QDialog):
 				if self.answer.is_integer():
 					self.answer = int(self.answer)
 
-			self.prevDisplay += str(self.second)
+			if self.operation == root:
+				self.prevDisplay = str(self.second) + self.prevDisplay
+			else:
+				self.prevDisplay += str(self.second)
+
 			self.prevScreen.setText(self.prevDisplay)
 			self.equalsLast = True
 			if self.answer > 10 ** 12:
