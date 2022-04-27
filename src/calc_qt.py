@@ -2,20 +2,18 @@
 
 #pip install PyQt5
 
-from PyQt5 import QtWidgets, uic, Qt
+from PyQt5 import QtWidgets, uic, Qt, QtCore
 from calc import *
 import sys
 import os
 
-class Ui(QtWidgets.QDialog):
+class Ui(QtWidgets.QMainWindow):
 	def __init__(self):
 		super(Ui, self).__init__()
 
 		# Get relative path to this script, idk if this is the best way to do it though
 		dir_path = os.path.dirname(os.path.realpath(__file__))
-		uic.loadUi(dir_path + r'\res\calc1.ui', self)
-		self.screen = self.findChild(QtWidgets.QLabel, 'screen')
-		self.prevScreen = self.findChild(QtWidgets.QLabel, 'prevScreen')
+		uic.loadUi(dir_path + r'\res\calc.ui', self)
 
 		# NUMBERS
 		self.n1.clicked.connect(self.n1Pressed)
@@ -66,13 +64,60 @@ class Ui(QtWidgets.QDialog):
 
 		self.show()
 
+	def keyPressEvent(self, event):
+		if event.key() == QtCore.Qt.Key_1:
+			self.n1Pressed()
+		elif event.key() == QtCore.Qt.Key_2:
+			self.n2Pressed()
+		elif event.key() == QtCore.Qt.Key_3:
+			self.n3Pressed()
+		elif event.key() == QtCore.Qt.Key_4:
+			self.n4Pressed()
+		elif event.key() == QtCore.Qt.Key_5:
+			self.n5Pressed()
+		elif event.key() == QtCore.Qt.Key_6:
+			self.n6Pressed()
+		elif event.key() == QtCore.Qt.Key_7:
+			self.n7Pressed()
+		elif event.key() == QtCore.Qt.Key_8:
+			self.n8Pressed()
+		elif event.key() == QtCore.Qt.Key_9:
+			self.n9Pressed()
+		elif event.key() == QtCore.Qt.Key_0:
+			self.n0Pressed()
+		elif event.key() == QtCore.Qt.Key_0:
+			self.n0Pressed()
+		elif event.key() == QtCore.Qt.Key_Plus:
+			self.mAddPressed()
+		elif event.key() == QtCore.Qt.Key_Minus:
+			self.mSubPressed()
+		elif event.key() == QtCore.Qt.Key_Asterisk:
+			self.mMulPressed()
+		elif event.key() == QtCore.Qt.Key_Slash:
+			self.mDivPressed()
+		elif event.key() == QtCore.Qt.Key_Enter:
+			self.resultPressed()
+		elif event.key() == QtCore.Qt.Key_Return:
+			self.resultPressed()
+		elif event.key() == QtCore.Qt.Key_Backspace:
+			self.deleteLastPressed()
+		elif event.key() == QtCore.Qt.Key_Delete:
+			self.pclearPressed()
+		elif event.key() == QtCore.Qt.Key_Shift:
+			self.switchSignPressed()
+		elif event.key() == QtCore.Qt.Key_Period:
+			self.dotPressed()
+		else:
+			super(Ui, self).keyPressEvent(event)
+		#event.accept()
+
 	def nPrint(self, value):
 		if self.cleared:
 			self.display = value
 			self.cleared = False
 		else:
 			self.display += value
-		if float(self.display) > 10 ** 12:
+		if abs(float(self.display)) > 10 ** 12:
 			self.screen.setText("{:e}".format(float(self.display)))
 		else:
 			self.screen.setText(self.display)
@@ -82,7 +127,7 @@ class Ui(QtWidgets.QDialog):
 		self.first = float(self.display)
 		if self.first.is_integer():
 			self.first = int(self.first)
-		if self.first > 10 ** 12:
+		if abs(self.first) > 10 ** 12:
 			self.prevDisplay = "{:e}".format(self.first) + symbol
 		else:
 			self.prevDisplay = str(self.first) + symbol
@@ -101,7 +146,7 @@ class Ui(QtWidgets.QDialog):
 		if self.first.is_integer():
 			self.first = int(self.first)
 
-		if self.first > 10 ** 12:
+		if abs(self.first) > 10 ** 12:
 			self.prevDisplay = symbol + "(" + "{:e}".format(self.first) + ")"
 		else:
 			self.prevDisplay = symbol + "(" + str(self.first) + ")"
@@ -131,7 +176,7 @@ class Ui(QtWidgets.QDialog):
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = True
 		# TODO: define upper limit on answers
-		if self.answer > 10 ** 12:
+		if abs(self.answer) > 10 ** 12:
 			self.display = "{:e}".format(self.answer)
 		else:
 			self.display = str(self.answer)
@@ -188,10 +233,16 @@ class Ui(QtWidgets.QDialog):
 	def switchSignPressed(self):
 		if self.display[0] == "-":
 			self.display = self.display[1 : : ]
-			self.screen.setText(self.display)
+			if abs(float(self.display)) > 10 ** 12:
+				self.screen.setText("{:e}".format(float(self.display)))
+			else:
+				self.screen.setText(self.display)
 		else:
 			self.display = "-" + self.display
-			self.screen.setText(self.display)
+			if abs(float(self.display)) > 10 ** 12:
+				self.screen.setText("{:e}".format(float(self.display)))
+			else:
+				self.screen.setText(self.display)
 
 	def deleteLastPressed(self):
 		self.cleared = True
@@ -230,7 +281,7 @@ class Ui(QtWidgets.QDialog):
 		self.first = float(self.display)
 		if self.first.is_integer():
 			self.first = int(self.first)
-		if self.first > 10 ** 12:
+		if abs(self.first > 10 ** 12):
 			self.prevDisplay = "√" + "{:e}".format(self.first)
 		else:
 			self.prevDisplay = "√" + str(self.first)
@@ -319,19 +370,19 @@ class Ui(QtWidgets.QDialog):
 					self.answer = int(self.answer)
 
 			if self.operation == root:
-				if self.second > 10 ** 12:
+				if abs(self.second) > 10 ** 12:
 					self.prevDisplay = "{:e}".format(self.second) + self.prevDisplay
 				else:
 					self.prevDisplay = str(self.second) + self.prevDisplay
 			else:
-				if self.second > 10 ** 12:
+				if abs(self.second) > 10 ** 12:
 					self.prevDisplay += "{:e}".format(self.second)
 				else:
 					self.prevDisplay += str(self.second)
 
 			self.prevScreen.setText(self.prevDisplay)
 			self.equalsLast = True
-			if self.answer > 10 ** 12:
+			if abs(self.answer) > 10 ** 12:
 				self.display = "{:e}".format(self.answer)
 			else:
 				self.display = str(self.answer)
