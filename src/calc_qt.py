@@ -72,14 +72,20 @@ class Ui(QtWidgets.QDialog):
 			self.cleared = False
 		else:
 			self.display += value
-		self.screen.setText(self.display)
+		if float(self.display) > 10 ** 12:
+			self.screen.setText("{:e}".format(float(self.display)))
+		else:
+			self.screen.setText(self.display)
 
 	def binaryOperation(self, operation, symbol):
 		self.unaryLast = False
 		self.first = float(self.display)
 		if self.first.is_integer():
 			self.first = int(self.first)
-		self.prevDisplay = str(self.first) + symbol
+		if self.first > 10 ** 12:
+			self.prevDisplay = "{:e}".format(self.first) + symbol
+		else:
+			self.prevDisplay = str(self.first) + symbol
 		self.symbol = symbol
 		self.zeroPressed()
 		self.operation = operation
@@ -224,7 +230,10 @@ class Ui(QtWidgets.QDialog):
 		self.first = float(self.display)
 		if self.first.is_integer():
 			self.first = int(self.first)
-		self.prevDisplay = "√" + str(self.first)
+		if self.first > 10 ** 12:
+			self.prevDisplay = "√" + "{:e}".format(self.first)
+		else:
+			self.prevDisplay = "√" + str(self.first)
 		self.symbol = "√"
 		self.zeroPressed()
 		self.operation = root
@@ -310,9 +319,15 @@ class Ui(QtWidgets.QDialog):
 					self.answer = int(self.answer)
 
 			if self.operation == root:
-				self.prevDisplay = str(self.second) + self.prevDisplay
+				if self.second > 10 ** 12:
+					self.prevDisplay = "{:e}".format(self.second) + self.prevDisplay
+				else:
+					self.prevDisplay = str(self.second) + self.prevDisplay
 			else:
-				self.prevDisplay += str(self.second)
+				if self.second > 10 ** 12:
+					self.prevDisplay += "{:e}".format(self.second)
+				else:
+					self.prevDisplay += str(self.second)
 
 			self.prevScreen.setText(self.prevDisplay)
 			self.equalsLast = True
