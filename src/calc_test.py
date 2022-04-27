@@ -224,6 +224,7 @@ class ToThePowerOfTest(unittest.TestCase):
         self.assertRaises(ValueError, to_the_power_of, 191, 7.3)                   # exponent must be a Natural number (floating point number)
         self.assertRaises(ValueError, to_the_power_of, 313, -3.17)                 # exponent must be a Natural number (negative floating point number)
         self.assertRaises(ValueError, to_the_power_of, 17, -5)                     # exponent must be a Natural number (negative odd number)
+        self.assertRaises(ValueError, to_the_power_of, 10.0, 500)                     # exponent must be a Natural number (negative odd number)
         
 ## @class RootTest
 # @brief Testy funkcie root()

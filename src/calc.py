@@ -76,7 +76,12 @@ def to_the_power_of(base, *args):
         raise ValueError("Zadaj prirodzené číslo")
     elif exponent < 0:
         raise ValueError("Zadaj prirodzené čísla")
-    return round(base ** exponent, 8)
+    try:
+        base ** exponent
+    except OverflowError:
+        raise ValueError("Príliš vysoké číslo")
+    else:
+        return round(base ** exponent, 8)
 
 ## 
 # @brief Funkcia vypočíta n-tú odmocninu z čísla
@@ -111,12 +116,12 @@ def root(radicand, *args):
 # @return Funkcia vracia faktoriál čísla
 def factorial(number):
     if number > 30:
-        raise ValueError("Číslo mimo intervalu <0,30>")
+        raise ValueError("Mimo intervalu <0,30>")
     factorial = 1
     if not isinstance(number, int):
         raise ValueError("Zadaj prirodzené číslo")
     elif number < 0:
-        raise ValueError("Číslo mimo intervalu <0,30>")
+        raise ValueError("Mimo intervalu <0,30>")
     elif number == 0:
         return factorial
     for i in range(1,number + 1):
