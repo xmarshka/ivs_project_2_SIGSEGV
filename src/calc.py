@@ -72,9 +72,7 @@ def to_the_power_of(base, *args):
         raise ValueError("Nespavny počet argumentov")
     else:
         exponent = args[0]
-    if not isinstance(exponent, int):
-        raise ValueError("Zadaj prirodzené číslo")
-    elif exponent < 0:
+    if exponent < 0 or not isinstance(exponent, int):
         raise ValueError("Zadaj prirodzené čísla")
     try:
         base ** exponent
@@ -97,16 +95,14 @@ def root(radicand, *args):
         raise ValueError("Nesprávny počet argumentov")
     else:
         index = args[0]
-    if not isinstance(index, int):
+    if index <= 0 or not isinstance(index, int):
         raise ValueError("Zadaj prirodzené číslo")
-    elif index <= 0:
-        raise ValueError("Zadaj prirodzené číslo")
-    elif index % 2 == 0 and radicand < 0:
+    elif not(index & 1 == 1) and radicand < 0:
         raise ValueError("Záporný odmocnenec")
     if radicand >= 0:
         return round(radicand ** (1/index), 8)
     else:
-        return round(-abs(radicand) ** (1/index), 8)
+        return round(-abs(radicand) ** (1/index), 8) # absolútna hodnota kvoli pythonu
 
 ## 
 # @brief Funkcia vypočíta faktoriál prirodzeného čísla
