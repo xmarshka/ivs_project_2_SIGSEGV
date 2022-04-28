@@ -14,7 +14,7 @@ class Ui(QtWidgets.QMainWindow):
 		# Get relative path to this script, idk if this is the best way to do it though
 		dir_path = os.path.dirname(os.path.realpath(__file__))
 		uic.loadUi(dir_path + r'\res\calc.ui', self)
-		self.setWindowIcon(QtGui.QIcon(dir_path + r'\res\Logo Calc.png'))
+		self.setWindowIcon(QtGui.QIcon(dir_path + r'\res\LogoCalc.png'))
 
 		# NUMBERS
 		self.n1.clicked.connect(self.n1Pressed)
