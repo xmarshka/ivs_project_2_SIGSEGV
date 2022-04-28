@@ -2,7 +2,7 @@
 
 #pip install PyQt5
 
-from PyQt5 import QtWidgets, uic, Qt, QtCore
+from PyQt5 import QtWidgets, uic, QtGui, QtCore
 from calc import *
 import sys
 import os
@@ -14,6 +14,7 @@ class Ui(QtWidgets.QMainWindow):
 		# Get relative path to this script, idk if this is the best way to do it though
 		dir_path = os.path.dirname(os.path.realpath(__file__))
 		uic.loadUi(dir_path + r'\res\calc.ui', self)
+		self.setWindowIcon(QtGui.QIcon(dir_path + r'\res\Logo Calc.png'))
 
 		# NUMBERS
 		self.n1.clicked.connect(self.n1Pressed)
@@ -281,7 +282,7 @@ class Ui(QtWidgets.QMainWindow):
 		self.first = float(self.display)
 		if self.first.is_integer():
 			self.first = int(self.first)
-		if abs(self.first > 10 ** 12):
+		if abs(self.first) > 10 ** 12:
 			self.prevDisplay = "√" + "{:e}".format(self.first)
 		else:
 			self.prevDisplay = "√" + str(self.first)
@@ -346,7 +347,10 @@ class Ui(QtWidgets.QMainWindow):
 			return
 		if self.operation:
 			if self.equalsLast:
-				self.prevDisplay = str(self.answer) + self.symbol
+				if abs(self.answer) > 10 ** 12:
+					self.prevDisplay = "{:e}".format(self.answer) + self.symbol
+				else:
+					self.prevDisplay = str(self.answer) + self.symbol
 			else:
 				self.second = float(self.display)
 				if self.second.is_integer():
