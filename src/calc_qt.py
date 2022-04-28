@@ -1,15 +1,20 @@
 '''
-# Nazov projektu: Projekt kalkulacka
+# Nazov projektu: Projekt kalkulačka
 # Subor: calc_qt.py
 # Datum: 24.3.2020
 # Autor: xmarsa15
+# Licencia : Projekt je distribuovaný pod licenciou GNU General Public License version 3
 #
 # Popis: Implementácia grafického rozhrania pomocou PyQt
 #
 '''
 ##
 # @file calc_qt.py
+#
 # @brief Implementácia grafického rozhrania pomocou PyQt
+# @author xmarsa15
+# @copyright Projekt je distribuovaný pod licenciou GNU General Public License version 3 
+#
 
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
 from calc import *
@@ -18,6 +23,7 @@ import os
 
 ## @class Ui
 # @brief Trieda grafického rozhrania
+#
 # @param QtWidgets.QMainWindow
 class Ui(QtWidgets.QMainWindow):
 	def __init__(self):

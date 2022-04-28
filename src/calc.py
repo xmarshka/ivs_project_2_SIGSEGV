@@ -7,7 +7,6 @@
 # Popis: Kniznica s matematickymi funkciami
 #
 '''
-
 ##
 # @file calc.py
 #
