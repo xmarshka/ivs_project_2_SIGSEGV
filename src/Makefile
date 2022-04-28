@@ -14,7 +14,7 @@ pack:
 	cd .. && if exist $(FLDR) (rmdir $(FLDR) /s /q)
 	cd .. && cd .. && mkdir $(FLDR) && xcopy /s $(NAME_OF_PROJECT_FLDR) $(FLDR) && move $(FLDR) $(NAME_OF_PROJECT_FLDR)
 	cd .. && cd $(FLDR) && mkdir install && mkdir repo
-	cd .. && cd $(FLDR) && move *.* repo && move .idea repo && move mockup repo && move plan repo && move profiling repo && move src repo
+	cd .. && cd $(FLDR) && move *.* repo && move mockup repo && move plan repo && move profiling repo && move src repo && if exist .git (move .git repo)
 	cd .. && powershell Compress-Archive $(FLDR) $(PACK)
 	cd .. && rmdir $(FLDR) /s /q
 
