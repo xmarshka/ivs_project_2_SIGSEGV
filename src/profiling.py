@@ -1,11 +1,30 @@
+'''
+# Názov projektu: Projekt kalkulačka
+# Súbor: profilling.py
+# Dátum: 26.3.2020
+# Autor: xsmata03
+# Licencia : Projekt je distribuovaný pod licenciou GNU General Public License version 3
+#
+# Popis: Program pre výpočet výberovej smerodajnej odchýlky
+#
+'''
+
+##
+# @file profilling.py
+#
+# @brief Program pre výpočet výberovej smerodajnej odchýlky
+# @author xsmata03
+# @copyright Projekt je distribuovaný pod licenciou GNU General Public License version 3 
+#
+
 import random
 from sys import stdin
 from calc import *
 
 ##
-# @brief Vyberova smerodatna odchylka
+# @brief Funkcia počíta výberovú smerodajnú odchýlku
 #
-# @param numbers pole cisel
+# @param numbers pole čísel
 #
 def standard_deviation(numbers):
     n = len(numbers)
@@ -23,10 +42,10 @@ def standard_deviation(numbers):
     print(s) # vysledok smerovej odchylky 
 
 ##
-# @brief Vyplneni pole nahodnymi cislami
+# @brief Vyplnenie poľa náhodnými číslami
 #
-# @param n pocet cisel v poli
-# @param numbers pole cisel
+# @param n počet čísel v poli
+# @param numbers pole čísel
 #
 def generate_numbers(n, numbers):
     random.seed() # nastavenie seedu na systemovy cas
@@ -46,3 +65,5 @@ if __name__ == '__main__':
         generate_numbers(1000, inputs)
 
     standard_deviation(inputs)
+
+### Koniec súboru profilling.py ###
