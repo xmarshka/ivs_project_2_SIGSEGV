@@ -163,7 +163,7 @@ class Ui(QtWidgets.QMainWindow):
 			self.cleared = True
 			self.decimal = False
 			self.display = "0"
-			self.screen.setText("ERROR: " + str(e))
+			self.screen.setText(str(e))
 			self.operation = False
 			self.unaryLast = False
 			self.first = 0
@@ -321,7 +321,7 @@ class Ui(QtWidgets.QMainWindow):
 			self.cleared = True
 			self.decimal = False
 			self.display = "0"
-			self.screen.setText("ERROR: " + str(e))
+			self.screen.setText(str(e))
 			self.operation = False
 			self.unaryLast = False
 			self.first = 0
@@ -362,7 +362,7 @@ class Ui(QtWidgets.QMainWindow):
 				self.cleared = True
 				self.decimal = False
 				self.display = "0"
-				self.screen.setText("ERROR: " + str(e))
+				self.screen.setText(str(e))
 				self.operation = False
 				self.unaryLast = False
 				self.first = 0
