@@ -1,4 +1,4 @@
-xlogin01 100 (základ GUI a základní mat. operace)
-xlogin02 100 (pokročilé mat. operace)
-xlogin03 90 (profiling, instalátor)
-xlogin04 110 (testy, dokumentace)
+xmarsa15 133 (GUI, team leader, makefile)
+xsmata03 133 (profiling, základné operácie mat. knižnice, makefile, testy)
+xvadov01 133 (dokumentácia, pokročilé operácie mat. knižnice, testy)
+xsadlo02 0 ()

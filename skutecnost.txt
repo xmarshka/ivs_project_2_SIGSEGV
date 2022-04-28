@@ -1,1 +1,4 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+Najväčší rozdiel bol opustenie tímu jedného člena, čo spôsobilo zmenu rozdelenia práce a ťažšie stíhanie
+termínov. Výsledný produkt viacmenej odpovedá plánovanému, s menšou stratou funkcionality. Finálne estetické
+spracovanie produktu je jednoduchšie ako plánované, kvôli prerozdeleniu práce. Pravidelné stretnutia a 
+komunikácia boli prevažne dodržiavané, nevznikli žiadne konflikty nápadov.
