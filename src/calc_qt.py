@@ -184,9 +184,15 @@ class Ui(QtWidgets.QMainWindow):
 			self.first = int(self.first)
 
 		if abs(self.first) > 10 ** 12:
-			self.prevDisplay = symbol + "(" + "{:e}".format(self.first) + ")"
+			if symbol == "2√":
+				self.prevDisplay = symbol + "{:e}".format(self.first)
+			else:
+				self.prevDisplay = "{:e}".format(self.first) + symbol
 		else:
-			self.prevDisplay = symbol + "(" + str(self.first) + ")"
+			if symbol == "2√":
+				self.prevDisplay = symbol + str(self.first)
+			else:
+				self.prevDisplay = str(self.first) + symbol
 
 		self.symbol = symbol
 		self.clearDisplay()
@@ -371,17 +377,17 @@ class Ui(QtWidgets.QMainWindow):
 	##
 	# @brief Callback pre funkciu druhej mocniny
 	def mSquaredPressed(self):
-		self.unaryOperation(to_the_power_of, "squared", self.mSquaredPressed)
+		self.unaryOperation(to_the_power_of, "^2", self.mSquaredPressed)
 
 	##
 	# @brief Callback pre funkciu druhej odmocniny
 	def mSqrtPressed(self):
-		self.unaryOperation(root, "sqrt", self.mSqrtPressed)
+		self.unaryOperation(root, "2√", self.mSqrtPressed)
 
 	##
 	# @brief Callback pre funkciu výpočtu faktoriálu
 	def mFactorialPressed(self):
-		self.unaryOperation(factorial, "fact", self.mFactorialPressed)
+		self.unaryOperation(factorial, "!", self.mFactorialPressed)
 
 	##
 	# @brief Callback funkcia, ktorá určí, či je vstup prvočíslo
