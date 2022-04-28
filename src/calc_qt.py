@@ -42,7 +42,6 @@ class Ui(QtWidgets.QMainWindow):
 
 		# MISC
 		self.dot.clicked.connect(self.dotPressed)
-		self.zero.clicked.connect(self.zeroPressed)
 		self.switchSign.clicked.connect(self.switchSignPressed)
 		self.deleteLast.clicked.connect(self.deleteLastPressed)
 
@@ -158,7 +157,7 @@ class Ui(QtWidgets.QMainWindow):
 		else:
 			self.prevDisplay = str(self.first) + symbol
 		self.symbol = symbol
-		self.zeroPressed()
+		self.clearDisplay()
 		self.operation = operation
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = False
@@ -184,7 +183,7 @@ class Ui(QtWidgets.QMainWindow):
 			self.prevDisplay = symbol + "(" + str(self.first) + ")"
 
 		self.symbol = symbol
-		self.zeroPressed()
+		self.clearDisplay()
 		self.operation = operation
 		self.prevScreen.setText(self.prevDisplay)
 
@@ -279,8 +278,8 @@ class Ui(QtWidgets.QMainWindow):
 			self.screen.setText(self.display)
 
 	##
-	# @brief Callback pre stlačenie "00", vynuluje displej
-	def zeroPressed(self):
+	# @brief Funkcia vynuluje displej
+	def clearDisplay(self):
 		self.display = "0"
 		self.cleared = True
 		self.decimal = False
@@ -358,7 +357,7 @@ class Ui(QtWidgets.QMainWindow):
 		else:
 			self.prevDisplay = "√" + str(self.first)
 		self.symbol = "√"
-		self.zeroPressed()
+		self.clearDisplay()
 		self.operation = root
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = False
@@ -390,7 +389,7 @@ class Ui(QtWidgets.QMainWindow):
 			self.first = int(self.first)
 		self.prevDisplay = "Prime" + "(" + str(self.first) + ")"
 		self.symbol = "Prime"
-		self.zeroPressed()
+		self.clearDisplay()
 		self.operation = prime
 		self.prevScreen.setText(self.prevDisplay)
 
