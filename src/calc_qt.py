@@ -500,3 +500,5 @@ app = QtWidgets.QApplication(sys.argv)
 window = Ui()
 window.setFixedSize(window.size())
 app.exec_()
+
+### Koniec súboru calc_qty.py ###

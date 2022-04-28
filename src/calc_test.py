@@ -286,9 +286,9 @@ class PrimeNumberTest(unittest.TestCase):
         self.assertFalse(prime(245655))
     
     ##
-    # @test Prvočíslo nemôže byť záporné číslo
-    # @test Prvočíslo nemôže byť záporné desatinné číslo
-    # @test Prvočíslo nemôže byť desatinné číslo
+    # @test Prvočíslo nemôže byť záporné číslo - ValueError
+    # @test Prvočíslo nemôže byť záporné desatinné číslo - ValueError
+    # @test Prvočíslo nemôže byť desatinné číslo - ValueError
     def test_failure_prime(self):
         self.assertRaises(ValueError, prime, -84184)
         self.assertRaises(ValueError, prime, -123.1)

@@ -1,6 +1,6 @@
 '''
 # Názov projektu: Projekt kalkulačka
-# Súbor: profilling.py
+# Súbor: profiling.py
 # Dátum: 26.3.2020
 # Autor: xsmata03
 # Licencia : Projekt je distribuovaný pod licenciou GNU General Public License version 3
@@ -10,7 +10,7 @@
 '''
 
 ##
-# @file profilling.py
+# @file profiling.py
 #
 # @brief Program pre výpočet výberovej smerodajnej odchýlky
 # @author xsmata03
