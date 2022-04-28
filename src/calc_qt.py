@@ -1,12 +1,24 @@
-#!/usr/bin/env python
-
-#pip install PyQt5
+'''
+# Nazov projektu: Projekt kalkulacka
+# Subor: calc_qt.py
+# Datum: 24.3.2020
+# Autor: xmarsa15
+#
+# Popis: Implementácia grafického rozhrania pomocou PyQt
+#
+'''
+##
+# @file calc_qt.py
+# @brief Implementácia grafického rozhrania pomocou PyQt
 
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
 from calc import *
 import sys
 import os
 
+## @class Ui
+# @brief Trieda grafického rozhrania
+# @param QtWidgets.QMainWindow
 class Ui(QtWidgets.QMainWindow):
 	def __init__(self):
 		super(Ui, self).__init__()
@@ -65,6 +77,10 @@ class Ui(QtWidgets.QMainWindow):
 
 		self.show()
 
+	##
+	# @brief Callback pre spracovanie vstupu klávesnice
+	#
+	# @param event udalosť klávesnice
 	def keyPressEvent(self, event):
 		if event.key() == QtCore.Qt.Key_1:
 			self.n1Pressed()
@@ -112,6 +128,10 @@ class Ui(QtWidgets.QMainWindow):
 			super(Ui, self).keyPressEvent(event)
 		#event.accept()
 
+	##
+	# @brief Funkcia vypíše na displej určené číslo
+	#
+	# @param value hodnota, ktorá má byť vypísaná
 	def nPrint(self, value):
 		if self.cleared:
 			self.display = value
@@ -123,6 +143,11 @@ class Ui(QtWidgets.QMainWindow):
 		else:
 			self.screen.setText(self.display)
 
+	##
+	# @brief Funkcia vykoná prvú fázu binárneho výpočtu
+	#
+	# @param operation operácia, ktorá má byť vykonaná
+	# @param symbol znak operácie
 	def binaryOperation(self, operation, symbol):
 		self.unaryLast = False
 		self.first = float(self.display)
@@ -138,6 +163,12 @@ class Ui(QtWidgets.QMainWindow):
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = False
 
+	##
+	# @brief Funkcia vykoná obe fázy unárneho výpočtu
+	#
+	# @param operation operácia, ktorá má byť vykonaná
+	# @param symbol znak operácie
+	# @param lastUnaryOperation ukazateľ na funkciu operácie
 	def unaryOperation(self, operation, symbol, lastUnaryOperation):
 		if not self.equalsLast:
 			self.resultPressed()
@@ -186,36 +217,58 @@ class Ui(QtWidgets.QMainWindow):
 		self.first = self.answer
 		self.screen.setText(self.display)
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 1
 	def n1Pressed(self):
 		self.nPrint("1")
 	
+	##
+	# @brief Callback pre funkciu vypísania čísla 2
 	def n2Pressed(self):
 		self.nPrint("2")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 3
 	def n3Pressed(self):
 		self.nPrint("3")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 4
 	def n4Pressed(self):
 		self.nPrint("4")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 5
 	def n5Pressed(self):
 		self.nPrint("5")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 6
 	def n6Pressed(self):
 		self.nPrint("6")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 7
 	def n7Pressed(self):
 		self.nPrint("7")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 8
 	def n8Pressed(self):
 		self.nPrint("8")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 9
 	def n9Pressed(self):
 		self.nPrint("9")
 
+	##
+	# @brief Callback pre funkciu vypísania čísla 0
 	def n0Pressed(self):
 		self.nPrint("0")
 
+	##
+	# @brief Callback pre stlačenie desatinnej čiarky
 	def dotPressed(self):
 		if self.cleared:
 			self.display = "0"
@@ -225,12 +278,16 @@ class Ui(QtWidgets.QMainWindow):
 			self.cleared = False
 			self.screen.setText(self.display)
 
+	##
+	# @brief Callback pre stlačenie "00", vynuluje displej
 	def zeroPressed(self):
 		self.display = "0"
 		self.cleared = True
 		self.decimal = False
 		self.screen.setText(self.display)
 
+	##
+	# @brief Callback pre funkciu otočenia znamienka vstupu
 	def switchSignPressed(self):
 		if self.display[0] == "-":
 			self.display = self.display[1 : : ]
@@ -245,6 +302,8 @@ class Ui(QtWidgets.QMainWindow):
 			else:
 				self.screen.setText(self.display)
 
+	##
+	# @brief Callback pre funkciu vymazania poslednej cifry vstupu
 	def deleteLastPressed(self):
 		self.cleared = True
 		self.decimal = False
@@ -261,21 +320,33 @@ class Ui(QtWidgets.QMainWindow):
 			self.display = self.display[:-1]
 			self.screen.setText(self.display)
 
+	##
+	# @brief Callback pre funkciu sčítania
 	def mAddPressed(self):
 		self.binaryOperation(add, "+")
 	
+	##
+	# @brief Callback pre funkciu násobenia
 	def mMulPressed(self):
 		self.binaryOperation(multiply, "*")
 
+	##
+	# @brief Callback pre funkciu rozdielu
 	def mSubPressed(self):
 		self.binaryOperation(subtract, "-")
 
+	##
+	# @brief Callback pre funkciu delenia
 	def mDivPressed(self):
 		self.binaryOperation(divide, "/")
 
+	##
+	# @brief Callback pre funkciu mocniny
 	def mPowerPressed(self):
 		self.binaryOperation(to_the_power_of, "^")
 
+	##
+	# @brief Callback pre funkciu odmocniny
 	def mRootPressed(self):
 		#self.binaryOperation(root, "√")
 		self.unaryLast = False
@@ -292,15 +363,23 @@ class Ui(QtWidgets.QMainWindow):
 		self.prevScreen.setText(self.prevDisplay)
 		self.equalsLast = False
 
+	##
+	# @brief Callback pre funkciu druhej mocniny
 	def mSquaredPressed(self):
 		self.unaryOperation(to_the_power_of, "squared", self.mSquaredPressed)
 
+	##
+	# @brief Callback pre funkciu druhej odmocniny
 	def mSqrtPressed(self):
 		self.unaryOperation(root, "sqrt", self.mSqrtPressed)
 
+	##
+	# @brief Callback pre funkciu výpočtu faktoriálu
 	def mFactorialPressed(self):
 		self.unaryOperation(factorial, "fact", self.mFactorialPressed)
 
+	##
+	# @brief Callback funkcia, ktorá určí, či je vstup prvočíslo
 	def mPrimePressed(self):
 		if not self.equalsLast:
 			self.resultPressed()
@@ -341,6 +420,8 @@ class Ui(QtWidgets.QMainWindow):
 		self.first = self.answer
 		self.screen.setText(self.display)
 
+	##
+	# @brief Callback pre stlačenie "=", spracuje výsledok
 	def resultPressed(self):
 		if self.unaryLast != False:
 			self.unaryLast()
@@ -395,6 +476,8 @@ class Ui(QtWidgets.QMainWindow):
 			self.first = self.answer
 			self.screen.setText(self.display)
 
+	##
+	# @brief Callback pre stlačenie clear, resetne kalkulčku
 	def pclearPressed(self):
 		self.prevDisplay = ""
 		self.prevScreen.setText(self.prevDisplay)
