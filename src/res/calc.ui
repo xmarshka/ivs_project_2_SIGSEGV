@@ -20,7 +20,7 @@
    <string>Calc</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:1, stop:0 rgba(255, 4, 34, 255), stop:1 rgba(255, 28, 145, 255));</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:1, x1:2, y1:0, stop:0 rgba(247, 175, 49, 255), stop:1 rgba(232, 109, 112, 255), stop:2 rgba(223, 74, 145, 255));</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="mSquared">
