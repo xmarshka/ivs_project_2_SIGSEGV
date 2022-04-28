@@ -1,4 +1,4 @@
-NAME_OF_PROJECT_FLDR="ivs_project_2_SIGSEGV1"
+NAME_OF_PROJECT_FLDR="ivs_project_2_SIGSEGV"
 FLDR="xmarsa15_xvadov01_xsmata03"
 PACK="xmarsa15_xvadov01_xsmata03.zip"
 
