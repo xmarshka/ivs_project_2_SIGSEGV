@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>&#x202A;Projekt kalkulačka: &#x202A;Zdrojový súbor /mnt/c/Users/Matej/Desktop/MatejVadovic/Uni/1.rocnik/letny/IVS/Projekt2/ivs_project_2_SIGSEGV/src/calc_test.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">&#x202A;Projekt kalkulačka
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">&#x202A;Projekt kalkulačka na predmet IVS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generované programom Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hľadať');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hľadať');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('calc__test_8py_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">calc_test.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="calc__test_8py.html">Zobraziť dokumentáciu tohoto súboru.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacecalc__test.html">    1</a></span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="stringliteral"># Nazov projektu: Projekt kalkulačka</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral"># Subor: calc_test.py</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral"># Datum: 24.3.2020</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral"># Autor: xvadov01, xsmata03</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral"># Licencia : Projekt je distribuovaný pod licenciou GNU General Public License version 3</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">#</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral"># Popis: Testy matematickej knižnice calc.py</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">#</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">##</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># @file calc_test.py</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"># @brief Testy matematickej knižnice calc.py</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># @author xvadov01, xsmata03</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># @copyright Projekt je distribuovaný pod licenciou GNU General Public License version 3 </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> unittest</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> calc <span class="keyword">import</span> *</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">## @class AddTest</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"># @brief Testy funkcie add()</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classcalc__test_1_1AddTest.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1AddTest.html">&#x202A;AddTest</a>(unittest.TestCase):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    # @test Sčítanie pozitívych hodnôt</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classcalc__test_1_1AddTest.html#aa3c8cff6721cd77edc42b26f4c57513e">   28</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1AddTest.html#aa3c8cff6721cd77edc42b26f4c57513e">&#x202A;test_add_positive</a>(self):</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(1, 100), 101)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(32768, 32768), 65536)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(2147483648, 2147483648), 4294967296)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">    # @test Sčítanie negatívnych hodnôt</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classcalc__test_1_1AddTest.html#a3859a367e1010a87f46feae1e4a79083">   35</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1AddTest.html#a3859a367e1010a87f46feae1e4a79083">&#x202A;test_add_negative</a>(self):</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(-2, -10), -12)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(-32768, -32768), -65536)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(-2147483648, -2147483648), -4294967296)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    # @test Sčítanie hodnôt s desatinnou časťou    </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classcalc__test_1_1AddTest.html#ac0e2284127284d4d50595a6c3f802841">   42</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1AddTest.html#ac0e2284127284d4d50595a6c3f802841">&#x202A;test_add_floating</a>(self):</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(2.2291, 9.882), 12.1111, 8)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(-88183.293, -19383.28), -107566.573, 8)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(-29.11, 29994.238), 29965.128, 8)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(281.20398173, 0.184875102391), 281.388856832391, 8)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    # @test Sčítanie kombinovaných hodnôt(kladné, záporné, desatinné, celé čísla)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classcalc__test_1_1AddTest.html#a03d8e120c7626f8d99e878e808e41bd3">   50</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1AddTest.html#a03d8e120c7626f8d99e878e808e41bd3">&#x202A;test_add_combined</a>(self):</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(-2844.1, 9288), 6443.9)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(-184413, -138941.22), -323354.22)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">## @class SubtractTest</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"># @brief Testy funkcie substract()</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classcalc__test_1_1SubtractTest.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1SubtractTest.html">&#x202A;SubtractTest</a>(unittest.TestCase):</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    # @test Odčítanie nezáponých hodnôt</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classcalc__test_1_1SubtractTest.html#afccb9b3d10de68ed342a89b44f056266">   60</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1SubtractTest.html#afccb9b3d10de68ed342a89b44f056266">&#x202A;test_sub_positive</a>(self):</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(201, 102), 99)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(0, 65536), -65536)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">    # @test Odčítanie záporných hodnôt a nuly</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classcalc__test_1_1SubtractTest.html#a6170852f201e1ed86f2c080c25f1bed4">   66</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1SubtractTest.html#a6170852f201e1ed86f2c080c25f1bed4">&#x202A;test_sub_negative</a>(self):</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(-183, -248881), 248698)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(-199234, 0), -199234)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    # @test Odčítanie hodnôt s desatinnou časťou</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classcalc__test_1_1SubtractTest.html#a7169edf83ca9eeeb98fa1ecf5c030384">   72</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1SubtractTest.html#a7169edf83ca9eeeb98fa1ecf5c030384">&#x202A;test_sub_floating</a>(self):</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(2.1231, 21.312), -19.1889, 8)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(-12.138, -1283.2), 1271.062, 8)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(-2912.39, 2919992.2), -2922904.59, 8) </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">    # @test Odčítanie kombinovaných hodnôt(kladné, záporné, desatinné, celé čísla)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classcalc__test_1_1SubtractTest.html#a17aa94394c5a6201da88969c44c6997e">   79</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1SubtractTest.html#a17aa94394c5a6201da88969c44c6997e">&#x202A;test_sub_combined</a>(self):</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(21, -1.19), 22.19)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(-3, -1.2), -1.8)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">## @class MultiplyTest</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"># @brief Testy funkcie multiply()</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classcalc__test_1_1MultiplyTest.html">   85</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1MultiplyTest.html">&#x202A;MultiplyTest</a>(unittest.TestCase):</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">    # @test Násobenie nulou</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classcalc__test_1_1MultiplyTest.html#a54cc706ad078b99e9a4854e5b908ca41">   89</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1MultiplyTest.html#a54cc706ad078b99e9a4854e5b908ca41">&#x202A;test_mul_zero</a>(self):</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(2199, 0), 0)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(0, 0), 0)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">    # @test Násobenie kladnými hodnotami</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classcalc__test_1_1MultiplyTest.html#a01ef25d945255fdbb595c8c2bc679770">   95</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1MultiplyTest.html#a01ef25d945255fdbb595c8c2bc679770">&#x202A;test_mul_positive</a>(self):</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(21, 1), 21)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(281, 1391), 390871)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(2919389, 1000), 2919389000)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">    # @test Násobenie zápornými hodnotami</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classcalc__test_1_1MultiplyTest.html#a363a88a5ce4eb1fa56a8f5920f64699e">  102</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1MultiplyTest.html#a363a88a5ce4eb1fa56a8f5920f64699e">&#x202A;test_mul_negative</a>(self):</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(-12, -2), 24)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(-2919389, -1000), 2919389000)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">    # @test Násobenie hodnôt s desatinnou časťou</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classcalc__test_1_1MultiplyTest.html#a84a1579b837b2cc66642fba6166bbdc8">  108</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1MultiplyTest.html#a84a1579b837b2cc66642fba6166bbdc8">&#x202A;test_mul_floating</a>(self):</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(1.293, 4.7), 6.0771, 8)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(-183.18, 487.648), -89327.36064, 8)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">    # @test Násobenie kombinovaných hodnôt(kladné, záporné, desatinné, celé čísla)</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classcalc__test_1_1MultiplyTest.html#a4ea8e007f0e9d6921b4d95f0930e5238">  114</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1MultiplyTest.html#a4ea8e007f0e9d6921b4d95f0930e5238">&#x202A;test_mul_combined</a>(self):</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(255, -16.7), -4258.5, 8)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(-385.2, 284.1022), -109436.16744, 8)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">## @class DivideTest</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"># @brief Testy funkcie divide()</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classcalc__test_1_1DivideTest.html">  120</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1DivideTest.html">&#x202A;DivideTest</a>(unittest.TestCase):</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">    # @test Delenie nulou</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classcalc__test_1_1DivideTest.html#aacbe5c2eedae790b8280aa059cf6cc9c">  124</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1DivideTest.html#aacbe5c2eedae790b8280aa059cf6cc9c">&#x202A;test_div_zero</a>(self):</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(0, 182), 0)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        self.assertRaises(ValueError, divide, 283, 0)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        self.assertRaises(ValueError, divide,-284.1, 0)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">    # @test Delenie kladných hodnôt</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classcalc__test_1_1DivideTest.html#ad62dfc98630dcc5d9f9707fa8d3480a9">  131</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1DivideTest.html#ad62dfc98630dcc5d9f9707fa8d3480a9">&#x202A;test_div_positive</a>(self):</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(290, 2), 145.0)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(64905, 5), 12981.0)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">    # @test Delenie záporných hodnôt kladnými hodnotami</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classcalc__test_1_1DivideTest.html#ab45d6187fbe643afbd1ef63db714bfcb">  137</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1DivideTest.html#ab45d6187fbe643afbd1ef63db714bfcb">&#x202A;test_div_negative</a>(self):</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(-291, 2), -145.5)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(-201410040, 80), -2517625.5)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">    # @test Delenie hodnôt s desatinnou časťou</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classcalc__test_1_1DivideTest.html#ae372e14fc05cad086a152be53de0ff8e">  143</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1DivideTest.html#ae372e14fc05cad086a152be53de0ff8e">&#x202A;test_div_floating</a>(self):</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(2.46, 1.2), 2.05, 8)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(91664.0, -918725.0), -0.0997730550, 8)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">    # @test Delenie kombinovaných hodnôt(kladné, záporné, desatinné, celé čísla)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classcalc__test_1_1DivideTest.html#a5590708f7f079407953ff2b7d2ca9ef9">  149</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1DivideTest.html#a5590708f7f079407953ff2b7d2ca9ef9">&#x202A;test_div_combined</a>(self):</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(940, 3.333), 282.028202820, 8)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(-1920002.15, 69), -27826.1181159420, 8)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(-385.1, -1), 385.1, 8)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">## @class ToThePowerOfTest</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"># @brief Testy funkcie to_the_power_of()</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classcalc__test_1_1ToThePowerOfTest.html">  156</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1ToThePowerOfTest.html">&#x202A;ToThePowerOfTest</a>(unittest.TestCase):</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">    # @test Umocňovanie nulou - výsledok je vždy 1</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classcalc__test_1_1ToThePowerOfTest.html#a614124e2e7db5455d74560b3a1d6c139">  160</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1ToThePowerOfTest.html#a614124e2e7db5455d74560b3a1d6c139">&#x202A;test_to_the_power_of_zero</a>(self):</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(0, 0), 1)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(131, 0), 1)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-131, 0), 1)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-23.29, 0), 1)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(23.29, 0), 1)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">    # @test Umocňovanie párnym číslom    </span></div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classcalc__test_1_1ToThePowerOfTest.html#a714f6c11136be5df0e502e4bed4f8036">  169</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1ToThePowerOfTest.html#a714f6c11136be5df0e502e4bed4f8036">&#x202A;test_to_the_power_of_even</a>(self):</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(17, 2), 289)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-7, 4), 2401)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(23.29, 4), 294223.90426081)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-23.29, 2), 542.4241)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">    # @test Umocňovanie nepárnym číslom</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classcalc__test_1_1ToThePowerOfTest.html#ae140f890c3c4b88e2a7da7e6de83c8c5">  177</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1ToThePowerOfTest.html#ae140f890c3c4b88e2a7da7e6de83c8c5">&#x202A;test_to_the_power_of_odd</a>(self):</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(17, 3), 4913)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-7, 1), -7)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(23.29, 5), 6852474.73023, 5)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-23.29, 3), -12633.057289, 6)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">    # @test Umocňovanie dvojkou</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classcalc__test_1_1ToThePowerOfTest.html#a39baa4209dd1a425359ed4847b0c2e52">  185</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1ToThePowerOfTest.html#a39baa4209dd1a425359ed4847b0c2e52">&#x202A;test_to_the_power_of_two</a>(self):</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(131, 2), 17161)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(997, 2), 994009)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-191, 2), 36481)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(-313, 2), 97969)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(4,), 16)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">    # @test Umocňovanie záporným párnym číslom - ValueError</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">    # @test Umocňovanie desatinným číslom - ValueError</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">    # @test Umocňovanie záporným desatinným číslo - ValueError</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">    # @test Umocňovanie záporným nepárnym číslom - ValueError </span></div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classcalc__test_1_1ToThePowerOfTest.html#a2338c376328c33e3fc204c85d8de9d51">  197</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1ToThePowerOfTest.html#a2338c376328c33e3fc204c85d8de9d51">&#x202A;test_failure_to_the_power_of</a>(self):</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        self.assertRaises(ValueError, to_the_power_of, -313, -2)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        self.assertRaises(ValueError, to_the_power_of, 191, 7.3)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        self.assertRaises(ValueError, to_the_power_of, 313, -3.17)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        self.assertRaises(ValueError, to_the_power_of, 17, -5)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        self.assertRaises(ValueError, to_the_power_of, 10.0, 500)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">## @class RootTest</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"># @brief Testy funkcie root()</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classcalc__test_1_1RootTest.html">  206</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1RootTest.html">&#x202A;RootTest</a>(unittest.TestCase): <span class="comment"># radicand and then index: square root of 4... root(4, 2) or root(4, )</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">    # @test Odmocnina nuly - výsledok je vždy 0</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="classcalc__test_1_1RootTest.html#a17ab5276132729ba395c73324cf1c256">  210</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1RootTest.html#a17ab5276132729ba395c73324cf1c256">&#x202A;test_root_of_zero</a>(self):</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(0, ), 0)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(0, 2), 0)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(0, 5), 0)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">    # @test Druhá odmocnina    </span></div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classcalc__test_1_1RootTest.html#a7b1715e14ba37cc2d1fd7ae26852d95d">  217</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1RootTest.html#a7b1715e14ba37cc2d1fd7ae26852d95d">&#x202A;tets_square_root_of</a>(self):</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(64, ), 8)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(100.5, ), 10.02497, 5)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(16, 2), 4)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">    # @test Párna odmocnina</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="classcalc__test_1_1RootTest.html#a1b92f68a0d179654f2a6a2e0ecd5ce53">  224</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1RootTest.html#a1b92f68a0d179654f2a6a2e0ecd5ce53">&#x202A;test_even_root_of</a>(self):</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(64, 4), 2.82843, 5)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(15625, 6), 5)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(10000000000, 10), 10)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">    # @test Nepárna odmocnina</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="classcalc__test_1_1RootTest.html#a5278021f9fe726af025b08db8f795de8">  231</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1RootTest.html#a5278021f9fe726af025b08db8f795de8">&#x202A;test_odd_root_of</a>(self):</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(-27, 3), -3)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(27, 3), 3)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(100000, 5), 10)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(-100000, 5), -10)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(-1000.5, 3), -10.00167, 5)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        self.assertAlmostEqual(<a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(100000.5, 5), 10.00001, 5)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">    # @test Odmocňovanie záporným číslom - ValueError</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">    # @test Záporné číslo nie je možné odmocniť párnou odmocninou(v množine reálnych čísel) - ValueError</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">    # @test Desatinná odmocnina - ValueError</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">    # @test Záporná desatinná odmocnina - ValueError</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">    # @test Záporná odmocnina - ValueError</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">    # @test Nultá odmocnina - ValueError </span></div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="classcalc__test_1_1RootTest.html#afc2d1a9c7c3529eae23a3518f7668341">  246</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1RootTest.html#afc2d1a9c7c3529eae23a3518f7668341">&#x202A;test_failure_root_of</a>(self):</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        self.assertRaises(ValueError, root, -313, )</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        self.assertRaises(ValueError, root, -313, 4)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        self.assertRaises(ValueError, root, 191, 7.3)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        self.assertRaises(ValueError, root, 313, -3.17)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        self.assertRaises(ValueError, root, 17, -5)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        self.assertRaises(ValueError, root, 19, 0)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">## @class FactorialTest</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment"># @brief Testy funkcie factorial()</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classcalc__test_1_1FactorialTest.html">  256</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1FactorialTest.html">&#x202A;FactorialTest</a>(unittest.TestCase):</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">    # @test Faktoriál rôznych čísel</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="classcalc__test_1_1FactorialTest.html#ae95f140afa4fc62a3703e45b40a2019f">  260</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1FactorialTest.html#ae95f140afa4fc62a3703e45b40a2019f">&#x202A;test_factorial</a>(self):</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a646c12ccd79a4c9113943ee7801c65b6">&#x202A;factorial</a>(0), 1)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a646c12ccd79a4c9113943ee7801c65b6">&#x202A;factorial</a>(10), 3628800)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a646c12ccd79a4c9113943ee7801c65b6">&#x202A;factorial</a>(12), 479001600)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        self.assertEqual(<a class="code" href="namespacecalc.html#a646c12ccd79a4c9113943ee7801c65b6">&#x202A;factorial</a>(18), 6402373705728000)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">    # @test Faktoriál desatinného čísla - ValueError</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">    # @test Faktoriál záporného čísla - ValueError</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="classcalc__test_1_1FactorialTest.html#a2db0e27500b6f4a62124869bfbe60b53">  269</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1FactorialTest.html#a2db0e27500b6f4a62124869bfbe60b53">&#x202A;test_faulire_factorial</a>(self):</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        self.assertRaises(ValueError, factorial, 3.13)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        self.assertRaises(ValueError, factorial, -313)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">## @class PrimeNumberTest</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment"># @brief Testy funkcie prime()</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="classcalc__test_1_1PrimeNumberTest.html">  275</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalc__test_1_1PrimeNumberTest.html">&#x202A;PrimeNumberTest</a>(unittest.TestCase):</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">    # @test Testy, či sú čísla rôznej hodnoty správne určené ako prvočísla</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="classcalc__test_1_1PrimeNumberTest.html#af6f30dc34db0c52108489b5eae8477f0">  279</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1PrimeNumberTest.html#af6f30dc34db0c52108489b5eae8477f0">&#x202A;test_prime</a>(self):</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        self.assertTrue(<a class="code" href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;prime</a>(191))</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        self.assertTrue(<a class="code" href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;prime</a>(2999957))</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        self.assertTrue(<a class="code" href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;prime</a>(75437))</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        self.assertFalse(<a class="code" href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;prime</a>(0))</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        self.assertFalse(<a class="code" href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;prime</a>(1))</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        self.assertFalse(<a class="code" href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;prime</a>(64))</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        self.assertFalse(<a class="code" href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;prime</a>(245655))</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">    # @test Prvočíslo nemôže byť záporné číslo - ValueError</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">    # @test Prvočíslo nemôže byť záporné desatinné číslo - ValueError</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">    # @test Prvočíslo nemôže byť desatinné číslo - ValueError</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="classcalc__test_1_1PrimeNumberTest.html#a4fd00755a429fa63b19e35b4ae8389a4">  292</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classcalc__test_1_1PrimeNumberTest.html#a4fd00755a429fa63b19e35b4ae8389a4">&#x202A;test_failure_prime</a>(self):</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        self.assertRaises(ValueError, prime, -84184)</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        self.assertRaises(ValueError, prime, -123.1)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        self.assertRaises(ValueError, prime, 123.15)</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    unittest.main()</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">### Koniec súboru calc_test.py ###</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclasscalc__test_1_1ToThePowerOfTest_html_a714f6c11136be5df0e502e4bed4f8036"><div class="ttname"><a href="classcalc__test_1_1ToThePowerOfTest.html#a714f6c11136be5df0e502e4bed4f8036">&#x202A;calc_test.ToThePowerOfTest.test_to_the_power_of_even</a></div><div class="ttdeci">&#x202A;def test_to_the_power_of_even(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00169">calc_test.py:169</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1SubtractTest_html_a6170852f201e1ed86f2c080c25f1bed4"><div class="ttname"><a href="classcalc__test_1_1SubtractTest.html#a6170852f201e1ed86f2c080c25f1bed4">&#x202A;calc_test.SubtractTest.test_sub_negative</a></div><div class="ttdeci">&#x202A;def test_sub_negative(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00066">calc_test.py:66</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1ToThePowerOfTest_html_a39baa4209dd1a425359ed4847b0c2e52"><div class="ttname"><a href="classcalc__test_1_1ToThePowerOfTest.html#a39baa4209dd1a425359ed4847b0c2e52">&#x202A;calc_test.ToThePowerOfTest.test_to_the_power_of_two</a></div><div class="ttdeci">&#x202A;def test_to_the_power_of_two(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00185">calc_test.py:185</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1MultiplyTest_html_a84a1579b837b2cc66642fba6166bbdc8"><div class="ttname"><a href="classcalc__test_1_1MultiplyTest.html#a84a1579b837b2cc66642fba6166bbdc8">&#x202A;calc_test.MultiplyTest.test_mul_floating</a></div><div class="ttdeci">&#x202A;def test_mul_floating(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00108">calc_test.py:108</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1SubtractTest_html_a7169edf83ca9eeeb98fa1ecf5c030384"><div class="ttname"><a href="classcalc__test_1_1SubtractTest.html#a7169edf83ca9eeeb98fa1ecf5c030384">&#x202A;calc_test.SubtractTest.test_sub_floating</a></div><div class="ttdeci">&#x202A;def test_sub_floating(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00072">calc_test.py:72</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1MultiplyTest_html_a54cc706ad078b99e9a4854e5b908ca41"><div class="ttname"><a href="classcalc__test_1_1MultiplyTest.html#a54cc706ad078b99e9a4854e5b908ca41">&#x202A;calc_test.MultiplyTest.test_mul_zero</a></div><div class="ttdeci">&#x202A;def test_mul_zero(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00089">calc_test.py:89</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a3df020fe080132aea0e8c4cc139fd3f1"><div class="ttname"><a href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;calc.add</a></div><div class="ttdeci">&#x202A;def add(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok sčítania x+y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00025">calc.py:25</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1FactorialTest_html_a2db0e27500b6f4a62124869bfbe60b53"><div class="ttname"><a href="classcalc__test_1_1FactorialTest.html#a2db0e27500b6f4a62124869bfbe60b53">&#x202A;calc_test.FactorialTest.test_faulire_factorial</a></div><div class="ttdeci">&#x202A;def test_faulire_factorial(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00269">calc_test.py:269</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1FactorialTest_html"><div class="ttname"><a href="classcalc__test_1_1FactorialTest.html">&#x202A;calc_test.FactorialTest</a></div><div class="ttdoc">&#x202A;Testy funkcie factorial()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00256">calc_test.py:256</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1AddTest_html_a3859a367e1010a87f46feae1e4a79083"><div class="ttname"><a href="classcalc__test_1_1AddTest.html#a3859a367e1010a87f46feae1e4a79083">&#x202A;calc_test.AddTest.test_add_negative</a></div><div class="ttdeci">&#x202A;def test_add_negative(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00035">calc_test.py:35</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a23c6eba635b091d40d1561153d8d9d51"><div class="ttname"><a href="namespacecalc.html#a23c6eba635b091d40d1561153d8d9d51">&#x202A;calc.prime</a></div><div class="ttdeci">&#x202A;def prime(number)</div><div class="ttdoc">&#x202A;Funkcia určí, či číslo je prvočíslo.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00126">calc.py:126</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1DivideTest_html_aacbe5c2eedae790b8280aa059cf6cc9c"><div class="ttname"><a href="classcalc__test_1_1DivideTest.html#aacbe5c2eedae790b8280aa059cf6cc9c">&#x202A;calc_test.DivideTest.test_div_zero</a></div><div class="ttdeci">&#x202A;def test_div_zero(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00124">calc_test.py:124</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1RootTest_html_a5278021f9fe726af025b08db8f795de8"><div class="ttname"><a href="classcalc__test_1_1RootTest.html#a5278021f9fe726af025b08db8f795de8">&#x202A;calc_test.RootTest.test_odd_root_of</a></div><div class="ttdeci">&#x202A;def test_odd_root_of(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00231">calc_test.py:231</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1RootTest_html_a1b92f68a0d179654f2a6a2e0ecd5ce53"><div class="ttname"><a href="classcalc__test_1_1RootTest.html#a1b92f68a0d179654f2a6a2e0ecd5ce53">&#x202A;calc_test.RootTest.test_even_root_of</a></div><div class="ttdeci">&#x202A;def test_even_root_of(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00224">calc_test.py:224</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1PrimeNumberTest_html_a4fd00755a429fa63b19e35b4ae8389a4"><div class="ttname"><a href="classcalc__test_1_1PrimeNumberTest.html#a4fd00755a429fa63b19e35b4ae8389a4">&#x202A;calc_test.PrimeNumberTest.test_failure_prime</a></div><div class="ttdeci">&#x202A;def test_failure_prime(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00292">calc_test.py:292</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a646c12ccd79a4c9113943ee7801c65b6"><div class="ttname"><a href="namespacecalc.html#a646c12ccd79a4c9113943ee7801c65b6">&#x202A;calc.factorial</a></div><div class="ttdeci">&#x202A;def factorial(number)</div><div class="ttdoc">&#x202A;Funkcia vypočíta faktoriál prirodzeného čísla.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00107">calc.py:107</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1DivideTest_html_ae372e14fc05cad086a152be53de0ff8e"><div class="ttname"><a href="classcalc__test_1_1DivideTest.html#ae372e14fc05cad086a152be53de0ff8e">&#x202A;calc_test.DivideTest.test_div_floating</a></div><div class="ttdeci">&#x202A;def test_div_floating(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00143">calc_test.py:143</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1ToThePowerOfTest_html_a2338c376328c33e3fc204c85d8de9d51"><div class="ttname"><a href="classcalc__test_1_1ToThePowerOfTest.html#a2338c376328c33e3fc204c85d8de9d51">&#x202A;calc_test.ToThePowerOfTest.test_failure_to_the_power_of</a></div><div class="ttdeci">&#x202A;def test_failure_to_the_power_of(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00197">calc_test.py:197</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1DivideTest_html_ab45d6187fbe643afbd1ef63db714bfcb"><div class="ttname"><a href="classcalc__test_1_1DivideTest.html#ab45d6187fbe643afbd1ef63db714bfcb">&#x202A;calc_test.DivideTest.test_div_negative</a></div><div class="ttdeci">&#x202A;def test_div_negative(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00137">calc_test.py:137</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a19b23091b1ca046993a668aaefabf2a5"><div class="ttname"><a href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;calc.subtract</a></div><div class="ttdeci">&#x202A;def subtract(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok odčítania x-y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00034">calc.py:34</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1SubtractTest_html_afccb9b3d10de68ed342a89b44f056266"><div class="ttname"><a href="classcalc__test_1_1SubtractTest.html#afccb9b3d10de68ed342a89b44f056266">&#x202A;calc_test.SubtractTest.test_sub_positive</a></div><div class="ttdeci">&#x202A;def test_sub_positive(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00060">calc_test.py:60</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1RootTest_html_a7b1715e14ba37cc2d1fd7ae26852d95d"><div class="ttname"><a href="classcalc__test_1_1RootTest.html#a7b1715e14ba37cc2d1fd7ae26852d95d">&#x202A;calc_test.RootTest.tets_square_root_of</a></div><div class="ttdeci">&#x202A;def tets_square_root_of(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00217">calc_test.py:217</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1ToThePowerOfTest_html"><div class="ttname"><a href="classcalc__test_1_1ToThePowerOfTest.html">&#x202A;calc_test.ToThePowerOfTest</a></div><div class="ttdoc">&#x202A;Testy funkcie to_the_power_of()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00156">calc_test.py:156</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1PrimeNumberTest_html_af6f30dc34db0c52108489b5eae8477f0"><div class="ttname"><a href="classcalc__test_1_1PrimeNumberTest.html#af6f30dc34db0c52108489b5eae8477f0">&#x202A;calc_test.PrimeNumberTest.test_prime</a></div><div class="ttdeci">&#x202A;def test_prime(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00279">calc_test.py:279</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1ToThePowerOfTest_html_ae140f890c3c4b88e2a7da7e6de83c8c5"><div class="ttname"><a href="classcalc__test_1_1ToThePowerOfTest.html#ae140f890c3c4b88e2a7da7e6de83c8c5">&#x202A;calc_test.ToThePowerOfTest.test_to_the_power_of_odd</a></div><div class="ttdeci">&#x202A;def test_to_the_power_of_odd(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00177">calc_test.py:177</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1DivideTest_html_ad62dfc98630dcc5d9f9707fa8d3480a9"><div class="ttname"><a href="classcalc__test_1_1DivideTest.html#ad62dfc98630dcc5d9f9707fa8d3480a9">&#x202A;calc_test.DivideTest.test_div_positive</a></div><div class="ttdeci">&#x202A;def test_div_positive(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00131">calc_test.py:131</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1MultiplyTest_html_a363a88a5ce4eb1fa56a8f5920f64699e"><div class="ttname"><a href="classcalc__test_1_1MultiplyTest.html#a363a88a5ce4eb1fa56a8f5920f64699e">&#x202A;calc_test.MultiplyTest.test_mul_negative</a></div><div class="ttdeci">&#x202A;def test_mul_negative(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00102">calc_test.py:102</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a4a5dc82d68d720aa65c56a11ffed84f9"><div class="ttname"><a href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;calc.divide</a></div><div class="ttdeci">&#x202A;def divide(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok delenia x/y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00052">calc.py:52</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1MultiplyTest_html"><div class="ttname"><a href="classcalc__test_1_1MultiplyTest.html">&#x202A;calc_test.MultiplyTest</a></div><div class="ttdoc">&#x202A;Testy funkcie multiply()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00085">calc_test.py:85</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1AddTest_html_ac0e2284127284d4d50595a6c3f802841"><div class="ttname"><a href="classcalc__test_1_1AddTest.html#ac0e2284127284d4d50595a6c3f802841">&#x202A;calc_test.AddTest.test_add_floating</a></div><div class="ttdeci">&#x202A;def test_add_floating(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00042">calc_test.py:42</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1RootTest_html"><div class="ttname"><a href="classcalc__test_1_1RootTest.html">&#x202A;calc_test.RootTest</a></div><div class="ttdoc">&#x202A;Testy funkcie root()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00206">calc_test.py:206</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1AddTest_html_a03d8e120c7626f8d99e878e808e41bd3"><div class="ttname"><a href="classcalc__test_1_1AddTest.html#a03d8e120c7626f8d99e878e808e41bd3">&#x202A;calc_test.AddTest.test_add_combined</a></div><div class="ttdeci">&#x202A;def test_add_combined(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00050">calc_test.py:50</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1AddTest_html"><div class="ttname"><a href="classcalc__test_1_1AddTest.html">&#x202A;calc_test.AddTest</a></div><div class="ttdoc">&#x202A;Testy funkcie add()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00024">calc_test.py:24</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1DivideTest_html"><div class="ttname"><a href="classcalc__test_1_1DivideTest.html">&#x202A;calc_test.DivideTest</a></div><div class="ttdoc">&#x202A;Testy funkcie divide()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00120">calc_test.py:120</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1MultiplyTest_html_a01ef25d945255fdbb595c8c2bc679770"><div class="ttname"><a href="classcalc__test_1_1MultiplyTest.html#a01ef25d945255fdbb595c8c2bc679770">&#x202A;calc_test.MultiplyTest.test_mul_positive</a></div><div class="ttdeci">&#x202A;def test_mul_positive(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00095">calc_test.py:95</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1MultiplyTest_html_a4ea8e007f0e9d6921b4d95f0930e5238"><div class="ttname"><a href="classcalc__test_1_1MultiplyTest.html#a4ea8e007f0e9d6921b4d95f0930e5238">&#x202A;calc_test.MultiplyTest.test_mul_combined</a></div><div class="ttdeci">&#x202A;def test_mul_combined(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00114">calc_test.py:114</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1SubtractTest_html_a17aa94394c5a6201da88969c44c6997e"><div class="ttname"><a href="classcalc__test_1_1SubtractTest.html#a17aa94394c5a6201da88969c44c6997e">&#x202A;calc_test.SubtractTest.test_sub_combined</a></div><div class="ttdeci">&#x202A;def test_sub_combined(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00079">calc_test.py:79</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a56dc12ea5a56fee1003f334248a9e1c0"><div class="ttname"><a href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;calc.to_the_power_of</a></div><div class="ttdeci">&#x202A;def to_the_power_of(base, *args)</div><div class="ttdoc">&#x202A;Funkcia vypočíta n-tú mocninu reálneho čísla.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00064">calc.py:64</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1RootTest_html_a17ab5276132729ba395c73324cf1c256"><div class="ttname"><a href="classcalc__test_1_1RootTest.html#a17ab5276132729ba395c73324cf1c256">&#x202A;calc_test.RootTest.test_root_of_zero</a></div><div class="ttdeci">&#x202A;def test_root_of_zero(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00210">calc_test.py:210</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a17a7d149ebf9551681b4d5ee8b62b5d9"><div class="ttname"><a href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;calc.multiply</a></div><div class="ttdeci">&#x202A;def multiply(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok násobenia x*y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00043">calc.py:43</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1DivideTest_html_a5590708f7f079407953ff2b7d2ca9ef9"><div class="ttname"><a href="classcalc__test_1_1DivideTest.html#a5590708f7f079407953ff2b7d2ca9ef9">&#x202A;calc_test.DivideTest.test_div_combined</a></div><div class="ttdeci">&#x202A;def test_div_combined(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00149">calc_test.py:149</a></div></div>
+<div class="ttc" id="anamespacecalc_html_aae3790595f8b4f881b495f51bddc2d4d"><div class="ttname"><a href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;calc.root</a></div><div class="ttdeci">&#x202A;def root(radicand, *args)</div><div class="ttdoc">&#x202A;Funkcia vypočíta n-tú odmocninu z čísla.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00086">calc.py:86</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1FactorialTest_html_ae95f140afa4fc62a3703e45b40a2019f"><div class="ttname"><a href="classcalc__test_1_1FactorialTest.html#ae95f140afa4fc62a3703e45b40a2019f">&#x202A;calc_test.FactorialTest.test_factorial</a></div><div class="ttdeci">&#x202A;def test_factorial(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00260">calc_test.py:260</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1SubtractTest_html"><div class="ttname"><a href="classcalc__test_1_1SubtractTest.html">&#x202A;calc_test.SubtractTest</a></div><div class="ttdoc">&#x202A;Testy funkcie substract()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00056">calc_test.py:56</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1RootTest_html_afc2d1a9c7c3529eae23a3518f7668341"><div class="ttname"><a href="classcalc__test_1_1RootTest.html#afc2d1a9c7c3529eae23a3518f7668341">&#x202A;calc_test.RootTest.test_failure_root_of</a></div><div class="ttdeci">&#x202A;def test_failure_root_of(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00246">calc_test.py:246</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1ToThePowerOfTest_html_a614124e2e7db5455d74560b3a1d6c139"><div class="ttname"><a href="classcalc__test_1_1ToThePowerOfTest.html#a614124e2e7db5455d74560b3a1d6c139">&#x202A;calc_test.ToThePowerOfTest.test_to_the_power_of_zero</a></div><div class="ttdeci">&#x202A;def test_to_the_power_of_zero(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00160">calc_test.py:160</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1AddTest_html_aa3c8cff6721cd77edc42b26f4c57513e"><div class="ttname"><a href="classcalc__test_1_1AddTest.html#aa3c8cff6721cd77edc42b26f4c57513e">&#x202A;calc_test.AddTest.test_add_positive</a></div><div class="ttdeci">&#x202A;def test_add_positive(self)</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00028">calc_test.py:28</a></div></div>
+<div class="ttc" id="aclasscalc__test_1_1PrimeNumberTest_html"><div class="ttname"><a href="classcalc__test_1_1PrimeNumberTest.html">&#x202A;calc_test.PrimeNumberTest</a></div><div class="ttdoc">&#x202A;Testy funkcie prime()</div><div class="ttdef"><b>Definition:</b> <a href="calc__test_8py_source.html#l00275">calc_test.py:275</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">&#x202A;src</a></li><li class="navelem"><a class="el" href="calc__test_8py.html">&#x202A;calc_test.py</a></li>
+    <li class="footer">Generované programom
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

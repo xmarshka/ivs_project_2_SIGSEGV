@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>&#x202A;Projekt kalkulačka: &#x202A;Zdrojový súbor /mnt/c/Users/Matej/Desktop/MatejVadovic/Uni/1.rocnik/letny/IVS/Projekt2/ivs_project_2_SIGSEGV/src/profiling.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">&#x202A;Projekt kalkulačka
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">&#x202A;Projekt kalkulačka na predmet IVS</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generované programom Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hľadať');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hľadať');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('profiling_8py_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">profiling.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="profiling_8py.html">Zobraziť dokumentáciu tohoto súboru.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceprofiling.html">    1</a></span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="stringliteral"># Názov projektu: Projekt kalkulačka</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral"># Súbor: profiling.py</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral"># Dátum: 26.3.2020</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral"># Autor: xsmata03</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral"># Licencia : Projekt je distribuovaný pod licenciou GNU General Public License version 3</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">#</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral"># Popis: Program pre výpočet výberovej smerodajnej odchýlky</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">#</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">##</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"># @file profiling.py</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># @brief Program pre výpočet výberovej smerodajnej odchýlky</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># @author xsmata03</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"># @copyright Projekt je distribuovaný pod licenciou GNU General Public License version 3 </span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> random</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> sys <span class="keyword">import</span> stdin</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> calc <span class="keyword">import</span> *</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">##</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"># @brief Funkcia počíta výberovú smerodajnú odchýlku</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># @param numbers pole čísel</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceprofiling.html#a8473c25f2d213bf341b5f29b9a2ca67f">   29</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceprofiling.html#a8473c25f2d213bf341b5f29b9a2ca67f">&#x202A;standard_deviation</a>(numbers):</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    n = len(numbers)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    x_avg = 0</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    res = 0</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> numbers:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        x_avg = <a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(int(i), x_avg) <span class="comment"># sucet cisel v poli</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        res = <a class="code" href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;add</a>(<a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(int(i), 2), res) <span class="comment"># sucet kvadratov cisel v poli</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    x_avg = <a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(x_avg, n) <span class="comment"># x (aritmeticky priemer)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    x_avg = <a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(n, <a class="code" href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;to_the_power_of</a>(int(x_avg), 2)) <span class="comment"># N * x^2</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    s = <a class="code" href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;multiply</a>(<a class="code" href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;subtract</a>(res, x_avg), <a class="code" href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;divide</a>(1, n-1)) <span class="comment"># vyraz pod odmocninou ((res - x^2) / n-1)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    s = <a class="code" href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;root</a>(s, 2)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    print(s) <span class="comment"># vysledok smerovej odchylky </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">##</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"># @brief Vyplnenie poľa náhodnými číslami</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"># @param n počet čísel v poli</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"># @param numbers pole čísel</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespaceprofiling.html#aade0aa86ce32a515e522ee61b90a6ded">   50</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceprofiling.html#aade0aa86ce32a515e522ee61b90a6ded">&#x202A;generate_numbers</a>(n, numbers):</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    random.seed() <span class="comment"># nastavenie seedu na systemovy cas</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1, n+1):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment"># append to numbers array random integer</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        numbers.append(random.randint(1, 1000))</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    inputs = []</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment"># nacitaj cisla zo stdin oddelene medzerami</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> <span class="keywordflow">not</span> stdin.isatty():</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> line <span class="keywordflow">in</span> stdin:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            inputs.extend(line.split())</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> inputs:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">break</span> <span class="comment"># prazdny riadok</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="namespaceprofiling.html#aade0aa86ce32a515e522ee61b90a6ded">&#x202A;generate_numbers</a>(1000, inputs)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="namespaceprofiling.html#a8473c25f2d213bf341b5f29b9a2ca67f">&#x202A;standard_deviation</a>(inputs)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">### Koniec súboru profilling.py ###</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespacecalc_html_a3df020fe080132aea0e8c4cc139fd3f1"><div class="ttname"><a href="namespacecalc.html#a3df020fe080132aea0e8c4cc139fd3f1">&#x202A;calc.add</a></div><div class="ttdeci">&#x202A;def add(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok sčítania x+y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00025">calc.py:25</a></div></div>
+<div class="ttc" id="anamespaceprofiling_html_a8473c25f2d213bf341b5f29b9a2ca67f"><div class="ttname"><a href="namespaceprofiling.html#a8473c25f2d213bf341b5f29b9a2ca67f">&#x202A;profiling.standard_deviation</a></div><div class="ttdeci">&#x202A;def standard_deviation(numbers)</div><div class="ttdoc">&#x202A;Funkcia počíta výberovú smerodajnú odchýlku.</div><div class="ttdef"><b>Definition:</b> <a href="profiling_8py_source.html#l00029">profiling.py:29</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a19b23091b1ca046993a668aaefabf2a5"><div class="ttname"><a href="namespacecalc.html#a19b23091b1ca046993a668aaefabf2a5">&#x202A;calc.subtract</a></div><div class="ttdeci">&#x202A;def subtract(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok odčítania x-y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00034">calc.py:34</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a4a5dc82d68d720aa65c56a11ffed84f9"><div class="ttname"><a href="namespacecalc.html#a4a5dc82d68d720aa65c56a11ffed84f9">&#x202A;calc.divide</a></div><div class="ttdeci">&#x202A;def divide(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok delenia x/y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00052">calc.py:52</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a56dc12ea5a56fee1003f334248a9e1c0"><div class="ttname"><a href="namespacecalc.html#a56dc12ea5a56fee1003f334248a9e1c0">&#x202A;calc.to_the_power_of</a></div><div class="ttdeci">&#x202A;def to_the_power_of(base, *args)</div><div class="ttdoc">&#x202A;Funkcia vypočíta n-tú mocninu reálneho čísla.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00064">calc.py:64</a></div></div>
+<div class="ttc" id="anamespaceprofiling_html_aade0aa86ce32a515e522ee61b90a6ded"><div class="ttname"><a href="namespaceprofiling.html#aade0aa86ce32a515e522ee61b90a6ded">&#x202A;profiling.generate_numbers</a></div><div class="ttdeci">&#x202A;def generate_numbers(n, numbers)</div><div class="ttdoc">&#x202A;Vyplnenie poľa náhodnými číslami.</div><div class="ttdef"><b>Definition:</b> <a href="profiling_8py_source.html#l00050">profiling.py:50</a></div></div>
+<div class="ttc" id="anamespacecalc_html_a17a7d149ebf9551681b4d5ee8b62b5d9"><div class="ttname"><a href="namespacecalc.html#a17a7d149ebf9551681b4d5ee8b62b5d9">&#x202A;calc.multiply</a></div><div class="ttdeci">&#x202A;def multiply(x, y)</div><div class="ttdoc">&#x202A;Funkcia vypočíta výsledok násobenia x*y.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00043">calc.py:43</a></div></div>
+<div class="ttc" id="anamespacecalc_html_aae3790595f8b4f881b495f51bddc2d4d"><div class="ttname"><a href="namespacecalc.html#aae3790595f8b4f881b495f51bddc2d4d">&#x202A;calc.root</a></div><div class="ttdeci">&#x202A;def root(radicand, *args)</div><div class="ttdoc">&#x202A;Funkcia vypočíta n-tú odmocninu z čísla.</div><div class="ttdef"><b>Definition:</b> <a href="calc_8py_source.html#l00086">calc.py:86</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">&#x202A;src</a></li><li class="navelem"><a class="el" href="profiling_8py.html">&#x202A;profiling.py</a></li>
+    <li class="footer">Generované programom
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
