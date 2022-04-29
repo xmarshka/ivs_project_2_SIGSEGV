@@ -129,7 +129,3 @@ dmypy.json
 .pyre/
 
 .vscode
-
-# Doxyfile otput html folder and warning text file
-/doc/html
-doxygen_varovania.txt
